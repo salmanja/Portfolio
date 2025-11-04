@@ -7,6 +7,7 @@ export default defineConfig({
     react() as PluginOption
   ],
   build:{
+    chunkSizeWarningLimit: 1000,
     rollupOptions:{
       output:{
         manualChunks(id){
