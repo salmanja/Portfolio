@@ -22,4 +22,8 @@ export default defineConfig({
     },
   },
 },
+server:{
+  open:false,
+  port:4000,
+}
 });
