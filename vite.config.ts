@@ -6,4 +6,17 @@ export default defineConfig({
   plugins: [
     react() as PluginOption
   ],
-})
+  build:{
+    rollupOptions:{
+      output:{
+        manualChunks(id){
+          if(id.includes('node_modules')){
+            return 'vendor';
+        } if(id.includes('src/components/')){
+            return 'components';
+          }
+      },
+    },
+  },
+},
+});
