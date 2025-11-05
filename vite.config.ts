@@ -2,10 +2,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import type { PluginOption } from 'vite'
 import { visualizer} from 'rollup-plugin-visualizer';
+import tailwindcss from '@tailwindcss/vite'
+
 import path from 'path'
 
 export default defineConfig({
-  plugins: [react() as PluginOption, visualizer({ open: true })],
+  plugins: [react() as PluginOption, visualizer({ open: true }), tailwindcss() as PluginOption],
   build: {
     chunkSizeWarningLimit: 1000,
     target: "esnext",
