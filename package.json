@@ -13,10 +13,14 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.5",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
     "@tailwindcss/vite": "^4.1.16",
+    "@types/three": "^0.181.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.16"
+    "tailwindcss": "^4.1.16",
+    "three": "^0.181.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
