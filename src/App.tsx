@@ -21,7 +21,7 @@ import { OrbitControls, OrthographicCamera} from '@react-three/drei'
 // };
 
 function App() {
-const [isDragging, setIsDragging] = useState(false);
+const [isDragging, _setIsDragging] = useState(false);
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
