@@ -1,24 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
-import { OrbitControls, OrthographicCamera} from '@react-three/drei'
-
-// function MyAnimatedSphere() {
-//   useFrame(() => {
-//     // setup orbit controls animation 
-//     console.log("Frame rendered");
-//   });
-
-//   return (
-//     <>
-//       <mesh>
-//         <boxGeometry args={[2, 2, 2]} />
-//         <meshStandardMaterial />
-//       </mesh>
-//       <ambientLight intensity={0.1} />
-//       <directionalLight position={[0, 0, 5]} color="pink" />
-//     </>
-//   );
-// };
+import { OrbitControls, OrthographicCamera} from '@react-three/drei';
 
 function App() {
 const [isDragging, _setIsDragging] = useState(false);
