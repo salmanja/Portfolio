@@ -15,7 +15,7 @@ const [isDragging, _setIsDragging] = useState(false);
         <Suspense fallback={null}>
           <FloorPane />
         </Suspense>
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={2} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
       </Canvas>
     </div>
