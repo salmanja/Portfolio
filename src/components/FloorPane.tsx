@@ -22,6 +22,7 @@ function FloorPane() {
     const target = camera.position
       .clone()
       .add(cameraDirection.multiplyScalar(moveDistance));
+      //-moveDistance for the horse model
       target.y = -1;
       plane.position.lerp(target, 0.5);
   });
