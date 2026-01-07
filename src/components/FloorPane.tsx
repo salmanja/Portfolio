@@ -34,7 +34,7 @@ function FloorPane() {
       scale={[0.5, 2.0, 1.0]}
       receiveShadow
     >
-      <planeGeometry args={[5, 5]} />
+      <planeGeometry args={[5, 20]} />
       <meshStandardMaterial color="#303b00" />
     </mesh>
   );
