@@ -8,7 +8,7 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas>
-        <ScrollControls pages={2} damping={0.1}>
+        <ScrollControls pages={4} damping={0.1}>
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>

@@ -9,12 +9,13 @@ function FloorPane() {
   const { camera } = useThree();
 
   useFrame(() => {
+    //add scrolling via key stroke 
     const offset = scroll.offset;
 
     const cameraDirection = new THREE.Vector3();
     camera.getWorldDirection(cameraDirection);
 
-    const moveDistance = offset * 10;
+    const moveDistance = offset * 15;
 
     const plane = planeRef.current;
     if (!plane) return;
@@ -35,7 +36,7 @@ function FloorPane() {
       scale={[0.5, 2.0, 1.0]}
       receiveShadow
     >
-      <planeGeometry args={[5, 10]} />
+      <planeGeometry args={[5, 15]} />
       <meshStandardMaterial color="#303b00" />
     </mesh>
   );
