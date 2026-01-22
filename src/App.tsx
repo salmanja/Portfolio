@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import {OrbitControls, ScrollControls} from '@react-three/drei';
-import FloorPane from "./components/FloorPane";
+import FloorPane from "./ThreeD components/Trail";
 
 function App() {
 

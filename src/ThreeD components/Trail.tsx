@@ -3,7 +3,7 @@ import { useScroll } from "@react-three/drei";
 import { useRef } from "react";
 import * as THREE from "three";
 
-function FloorPane() {
+function Trail() {
   const scroll = useScroll();
   const planeRef = useRef<THREE.Mesh | null>(null);
   const { camera } = useThree();
@@ -41,4 +41,4 @@ function FloorPane() {
     </mesh>
   );
 }
-export default FloorPane;
+export default Trail;
