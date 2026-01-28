@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import {OrbitControls, ScrollControls} from '@react-three/drei';
-import FloorPane from "./ThreeD components/Trail";
+import Trail from "./ThreeD components/Trail";
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <FloorPane />
+            <Trail/>
           </Suspense>
 
           <ambientLight intensity={2} />
