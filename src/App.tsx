@@ -23,7 +23,9 @@ function App() {
         {isActivePanel ? "Hide Panel" : "Show Panel"}
       </Button>
 
-      {isActivePanel && <PanelContainer isActivePanel={isActivePanel} /> }
+      {isActivePanel && <PanelContainer 
+      onPanelClose={togglePanel}
+      isActivePanel={isActivePanel} /> }
 
 
       <Canvas>

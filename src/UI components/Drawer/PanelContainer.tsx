@@ -1,18 +1,15 @@
 import { Drawer } from "@mui/material";
-import { useState } from "react";
 
-import AboutPanel from "../Panels/About Me Panel/AboutPanel"
+import AboutPanel from "../Panels/About Panel/AboutPanel"
 
-export default function PanelContainer({ isActivePanel} : { isActivePanel: boolean }) {
-
-const [isOpen, setIsOpen] =  useState(isActivePanel);
+export default function PanelContainer({ isActivePanel, onPanelClose} : { isActivePanel: boolean; onPanelClose: () => void}) {
 
 
 return (
   <Drawer
     anchor="right"
-    open={isOpen}
-    onClose={() => setIsOpen(!isOpen)}
+    open={isActivePanel}
+    onClose={onPanelClose}
     sx={{
       "& .MuiDrawer-paper": {
         width: 500, 
