@@ -3,12 +3,12 @@ import { Suspense, useState } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Trail";
 import { Button } from "@mui/material";
-import AboutPanel from "./UI components/Panels/About Me Panel/AboutPanel";
+import PanelContainer from "./UI components/Drawer/PanelContainer";
 
 function App() {
  // all my components array
 
-  const [isActivePanel, setIsActivePanel] = useState(false);
+  const [isActivePanel, setIsActivePanel] = useState<boolean>(false);
 
   const togglePanel = () =>{
     setIsActivePanel(!isActivePanel);
@@ -23,7 +23,7 @@ function App() {
         {isActivePanel ? "Hide Panel" : "Show Panel"}
       </Button>
 
-      {isActivePanel ? <AboutPanel /> : null}
+      {isActivePanel && <PanelContainer isActivePanel={isActivePanel} /> }
 
 
       <Canvas>
