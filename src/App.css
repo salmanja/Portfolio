@@ -1,1 +1,6 @@
-/* component specific css (imported in app.tsx) */
+/* app.tsx component specific css (imported in app.tsx) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
