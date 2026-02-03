@@ -2,8 +2,8 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Navigation/Trail";
-import { Button } from "@mui/material";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
+import TrailStop from "./ThreeD components/Navigation/TrailStop";
 
 function App() {
  // all my components array
@@ -17,12 +17,6 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
 
-
-      {/* mock button to toggle panel/null */}
-      <Button color="primary" onClick={togglePanel}>
-        {isActivePanel ? "Hide Panel" : "Show Panel"}
-      </Button>
-
       {isActivePanel && <PanelContainer 
       onPanelClose={togglePanel}
       isActivePanel={isActivePanel} /> }
@@ -34,6 +28,10 @@ function App() {
 
           <Suspense fallback={null}>
             <Trail />
+            <TrailStop trailStopClicked={togglePanel}
+            setIsActivePanel={setIsActivePanel}
+            isActivePanel={isActivePanel} 
+            />
           </Suspense>
 
           <ambientLight intensity={2} />
