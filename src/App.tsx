@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
-import Trail from "./ThreeD components/Trail";
+import Trail from "./ThreeD components/Navigation/Trail";
 import { Button } from "@mui/material";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 
