@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
-import TrailStop from "./ThreeD components/Navigation/TrailStop";
+import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
 
 function App() {
  // all my components array
@@ -28,9 +28,10 @@ function App() {
 
           <Suspense fallback={null}>
             <Trail />
-            <TrailStop trailStopClicked={togglePanel}
+            <StopsContainer trailStopClicked={togglePanel}
             setIsActivePanel={setIsActivePanel}
             isActivePanel={isActivePanel} 
+            
             />
           </Suspense>
 
