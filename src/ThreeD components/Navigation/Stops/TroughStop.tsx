@@ -1,4 +1,6 @@
-export default function TroughStop({ visitStop }: { visitStop: () => void }) {
+import type { StopProps} from "../../../Types/types"
+
+export default function TroughStop({ visitStop }: StopProps) {
   return (
     <>
       <ambientLight />

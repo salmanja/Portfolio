@@ -1,4 +1,6 @@
-export default function HayStop({ visitStop }: { visitStop: () => void }) {
+import type { StopProps} from "../../../Types/types"
+
+export default function HayStop({ visitStop }: StopProps) {
   return (
     <>
       <ambientLight />
