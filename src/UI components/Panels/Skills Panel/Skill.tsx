@@ -1,12 +1,8 @@
 import { Box } from "@mui/material";
+import type {SkillData}  from "./Types/types";
 
-interface SkillProps {
-  source: string;
-  alt: string;
-  title: string;
-}
 
-export default function Skill({ source, alt, title }: SkillProps) {
+export default function Skill({ source, alt, title }: SkillData) {
   return (
     <Box
       sx={

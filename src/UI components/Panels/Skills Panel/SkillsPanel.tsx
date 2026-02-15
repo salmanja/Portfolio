@@ -1,11 +1,6 @@
 import {Typography, Box} from "@mui/material";
 import Skill from "./Skill";
-
-interface SkillData {
-    source:string;
-    alt:string;
-    title:string;
-}
+import type {SkillData}  from "./Types/types";
 
 const skillsData: SkillData[] = [
   {
