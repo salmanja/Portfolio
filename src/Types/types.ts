@@ -1,12 +1,13 @@
+export type PanelID = "about" | "skills";
+
 export interface PanelContainerProps {
-    isActivePanel: boolean;
+    isActivePanel: PanelID | null;
     onPanelClose: () => void;
 } 
 export interface StopsContainerProps {
-  trailStopClicked: () => void;
-  setIsActivePanel: (isActivePanel: boolean) => void;
-  isActivePanel: boolean;
+visitStop: (panelID: PanelID) => void;
 }
 export interface StopProps {
-    visitStop: () => void;
+    visitStop: (panelID: PanelID) => void;
+    id: PanelID;
 }

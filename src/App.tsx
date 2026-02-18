@@ -4,21 +4,22 @@ import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
+import type { PanelID } from "./Types/types";
 
 function App() {
- // all my components array
+ // all my components hashmaps
 
-  const [isActivePanel, setIsActivePanel] = useState<boolean>(false);
+  const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
 
-  const togglePanel = () =>{
-    setIsActivePanel(!isActivePanel);
+  const openPanel = (panelID: PanelID) => {
+    setIsActivePanel(panelID);
   }
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
 
       {isActivePanel && <PanelContainer 
-      onPanelClose={togglePanel}
+      onPanelClose={() => setIsActivePanel(null)}
       isActivePanel={isActivePanel} /> }
 
 
@@ -28,10 +29,7 @@ function App() {
 
           <Suspense fallback={null}>
             <Trail />
-            <StopsContainer trailStopClicked={togglePanel}
-            setIsActivePanel={setIsActivePanel}
-            isActivePanel={isActivePanel} 
-            
+            <StopsContainer visitStop={openPanel}
             />
           </Suspense>
 

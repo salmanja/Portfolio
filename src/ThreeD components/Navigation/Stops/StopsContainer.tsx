@@ -1,20 +1,17 @@
 import HayStop from "./HayStop";
 import TroughStop from "./TroughStop";
-import type { StopsContainerProps } from "../../../Types/types";
+import type { StopsContainerProps} from "../../../Types/types";
+
+
 
 export default function StopsContainer({
-  trailStopClicked,
-  setIsActivePanel,
-  isActivePanel,
+  visitStop
 }: StopsContainerProps) {
-  const handleStopClick = () => {
-    trailStopClicked();
-    setIsActivePanel(!isActivePanel);
-  };
+
   return (
     <>
-      <HayStop visitStop={handleStopClick} />
-      <TroughStop visitStop={handleStopClick} />
+      <HayStop id="about" visitStop={visitStop} />
+      <TroughStop id="skills" visitStop={visitStop} />
     </>
   );
 }
