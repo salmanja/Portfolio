@@ -7,8 +7,6 @@ import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer"
 import type { PanelID } from "./Types/types";
 
 function App() {
- // all my components hashmaps
-
   const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
 
   const openPanel = (panelID: PanelID) => {
