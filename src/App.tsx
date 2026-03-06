@@ -5,6 +5,7 @@ import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
 import type { PanelID } from "./Types/types";
+import Horse from "./ThreeD components/Horse/Horse";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
@@ -26,6 +27,7 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
+            <Horse />
             <Trail />
             <StopsContainer visitStop={openPanel}
             />
