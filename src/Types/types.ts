@@ -11,3 +11,7 @@ export interface StopProps {
     visitStop: (panelID: PanelID) => void;
     id: PanelID;
 }
+
+export interface HorseProps {
+    horsePosition: {x:number, y:number, z:number};
+}

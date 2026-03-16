@@ -4,11 +4,12 @@ import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
-import type { PanelID } from "./Types/types";
+import type { PanelID, HorseProps } from "./Types/types";
 import Horse from "./ThreeD components/Horse/Horse";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
+  const [horsePosition, setHorsePosition] = useState<HorseProps["horsePosition"]>({ x:0, y: 0, z: 0 });
 
   const openPanel = (panelID: PanelID) => {
     setIsActivePanel(panelID);
@@ -27,7 +28,7 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <Horse />
+            <Horse horsePosition={horsePosition} />
             <Trail />
             <StopsContainer visitStop={openPanel}
             />
