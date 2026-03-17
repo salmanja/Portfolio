@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
@@ -10,6 +10,30 @@ import Horse from "./ThreeD components/Horse/Horse";
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
   const [horsePosition, setHorsePosition] = useState<HorseProps["horsePosition"]>({ x:0, y: 0, z: 0 });
+
+  const handleKeyDown = (event: KeyboardEvent)=>{
+    if(event.key ==="ArrowUp"){
+      console.log(event.key);
+      setHorsePosition((prev)=>({...prev, z:prev.z - 1}));
+    } else if(event.key === "ArrowDown"){
+      console.log(event.key);
+      setHorsePosition((prev)=>({...prev, z:prev.z + 1}));
+    } else if(event.key === "ArrowLeft"){
+      console.log(event.key);
+      setHorsePosition((prev) => ({...prev, x:prev.x - 1}))
+    } else if(event.key === "ArrowRight"){
+      console.log(event.key);
+      setHorsePosition((prev)=>({...prev, x:prev.x + 1}));
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleKeyDown]);
+
 
   const openPanel = (panelID: PanelID) => {
     setIsActivePanel(panelID);
