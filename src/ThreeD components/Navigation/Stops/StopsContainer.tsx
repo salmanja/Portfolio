@@ -1,17 +1,15 @@
-import HayStop from "./HayStop";
-import TroughStop from "./TroughStop";
 import type { StopsContainerProps} from "../../../Types/types";
-
+import Stop from "./Stop";
 
 
 export default function StopsContainer({
-  visitStop
+  visitStop, stops
 }: StopsContainerProps) {
 
   return (
     <>
-      <HayStop id="about" visitStop={visitStop} />
-      <TroughStop id="skills" visitStop={visitStop} />
+   {stops.map((stop)=>
+    <Stop key={stop.id} visitStop={visitStop} id={stop.id} position={stop.position} />)}
     </>
   );
 }
