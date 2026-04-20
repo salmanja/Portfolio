@@ -1,9 +1,11 @@
 import { useGLTF } from "@react-three/drei";
 import type { HorseProps } from "../../Types/types";
+import { forwardRef} from 'react';
 
 
-export default function Horse({ horsePosition }: HorseProps) {
+ const Horse = forwardRef(({ horsePosition }: HorseProps, ref) => {
   const { scene } = useGLTF('./public/models/horse.glb');
 
-  return <primitive object={scene} position={[horsePosition.x, horsePosition.y, horsePosition.z]} />;
-}
+  return <primitive ref={ref} object={scene} position={[horsePosition.x, horsePosition.y, horsePosition.z]} />;
+})
+export default Horse;

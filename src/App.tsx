@@ -1,5 +1,5 @@
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useState } from "react";
+import { Canvas} from "@react-three/fiber";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
@@ -12,6 +12,10 @@ function App() {
   const [horsePosition, setHorsePosition] = useState<HorseProps["horsePosition"]>({ x:0, y: 0, z: 0 });
 
   const stops: StopData[] = [{ id: 'about', position: [-2, 0, 0]}];
+
+  const horseRef = useRef<Mesh>();
+  const stopRefs = useRef<Mesh>([]);
+
 
   const handleKeyDown = (event: KeyboardEvent)=>{
     if(event.key ==="ArrowUp"){
@@ -54,9 +58,9 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <Horse horsePosition={horsePosition} />
+            <Horse ref={horseRef} horsePosition={horsePosition} />
             <Trail />
-            <StopsContainer stops={stops} visitStop={openPanel}
+            <StopsContainer ref={stopRefs} stops={stops} visitStop={openPanel}
             />
           </Suspense>
 
