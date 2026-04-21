@@ -1,6 +1,7 @@
 import type { StopProps } from "../../../Types/types";
+import { forwardRef} from 'react';
 
-export default function Stop ({ visitStop, id, position}: StopProps) {
+const Stop = forwardRef(({ visitStop, id, position}: StopProps, ref) => {
 return (
   <>
     <ambientLight />
@@ -10,11 +11,13 @@ return (
       rotation={[0, 10, 0]}
       position={position}
       key={id}
+      ref={ref}
     >
       <boxGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial attach="material" color="yellow" />
     </mesh>
   </>
 );
+})
 
-}
+export default Stop;

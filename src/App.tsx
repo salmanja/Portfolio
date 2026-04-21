@@ -6,6 +6,7 @@ import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
 import type { PanelID, HorseProps, StopData } from "./Types/types";
 import Horse from "./ThreeD components/Horse/Horse";
+import {Mesh} from "three";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
@@ -13,8 +14,8 @@ function App() {
 
   const stops: StopData[] = [{ id: 'about', position: [-2, 0, 0]}];
 
-  const horseRef = useRef<Mesh>();
-  const stopRefs = useRef<Mesh>([]);
+  const horseRef = useRef<Mesh>(null);
+  const stopRefs = useRef<Mesh[] | null>([]);
 
 
   const handleKeyDown = (event: KeyboardEvent)=>{

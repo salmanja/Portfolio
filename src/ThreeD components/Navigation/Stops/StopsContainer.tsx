@@ -1,15 +1,17 @@
 import type { StopsContainerProps} from "../../../Types/types";
 import Stop from "./Stop";
+import {forwardRef} from 'react';
 
 
-export default function StopsContainer({
+const StopsContainer = forwardRef(({
   visitStop, stops
-}: StopsContainerProps) {
+}: StopsContainerProps, ref) => {
 
   return (
     <>
    {stops.map((stop)=>
-    <Stop key={stop.id} visitStop={visitStop} id={stop.id} position={stop.position} />)}
+    <Stop ref={ref} key={stop.id} visitStop={visitStop} id={stop.id} position={stop.position} />)}
     </>
   );
-}
+})
+export default StopsContainer;
