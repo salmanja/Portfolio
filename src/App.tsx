@@ -61,7 +61,7 @@ function App() {
           <Suspense fallback={null}>
             <Horse ref={horseRef} horsePosition={horsePosition} />
             <Trail />
-            <StopsContainer ref={stopRefs} stops={stops} visitStop={openPanel}
+            <StopsContainer stops={stops} visitStop={openPanel}
             />
           </Suspense>
 
