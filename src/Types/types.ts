@@ -1,3 +1,6 @@
+import type { RefObject } from "react";
+import { Mesh } from "three";
+
 export type PanelID = "about" | "skills";
 
 export interface PanelContainerProps {
@@ -15,6 +18,7 @@ export interface StopData {
 export interface StopsContainerProps {
 visitStop: (panelID: PanelID) => void;
 stops: StopData[];
+stopRefs: RefObject<Mesh[]>;
 }
 
 //this is what the stop component needs, data and behavior

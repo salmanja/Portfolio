@@ -1,7 +1,8 @@
 import type { StopProps } from "../../../Types/types";
 import { forwardRef} from 'react';
+import { Mesh } from "three";
 
-const Stop = forwardRef(({ visitStop, id, position}: StopProps, ref) => {
+const Stop = forwardRef<Mesh, StopProps>(({ visitStop, id, position},ref) => {
 return (
   <>
     <ambientLight />

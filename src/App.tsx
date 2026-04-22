@@ -15,7 +15,7 @@ function App() {
   const stops: StopData[] = [{ id: 'about', position: [-2, 0, 0]}];
 
   const horseRef = useRef<Mesh>(null);
-  const stopRefs = useRef<Mesh[] | null>([]);
+  const stopRefs = useRef<Mesh[]>([]);
 
 
   const handleKeyDown = (event: KeyboardEvent)=>{
@@ -61,7 +61,7 @@ function App() {
           <Suspense fallback={null}>
             <Horse ref={horseRef} horsePosition={horsePosition} />
             <Trail />
-            <StopsContainer stops={stops} visitStop={openPanel}
+            <StopsContainer stopRefs={stopRefs} stops={stops} visitStop={openPanel}
             />
           </Suspense>
 
