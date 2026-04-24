@@ -18,7 +18,7 @@ export interface StopData {
 export interface StopsContainerProps {
 visitStop: (panelID: PanelID) => void;
 stops: StopData[];
-stopRefs: RefObject<Mesh[]>;
+stopRefs: RefObject<(Mesh | null)[]>;
 }
 
 //this is what the stop component needs, data and behavior
@@ -30,4 +30,11 @@ export interface StopProps {
 
 export interface HorseProps {
     horsePosition: {x:number, y:number, z:number};
+}
+
+export interface ProximityTriggerProps {
+  horseRef: React.RefObject<Mesh | null>;
+  stopRefs: React.RefObject<(Mesh | null)[]>;
+  stops: StopData[];
+  visitStop: (panelID: PanelID) => void;
 }

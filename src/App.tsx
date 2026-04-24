@@ -1,12 +1,14 @@
 import { Canvas} from "@react-three/fiber";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
+import {Mesh} from "three";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
-import type { PanelID, HorseProps, StopData } from "./Types/types";
 import Horse from "./ThreeD components/Horse/Horse";
-import {Mesh} from "three";
+import type { PanelID, HorseProps, StopData } from "./Types/types";
+import ProximityTrigger from "./UI components/Logic/ProximityTrigger"
+
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
@@ -15,7 +17,7 @@ function App() {
   const stops: StopData[] = [{ id: 'about', position: [-2, 0, 0]}];
 
   const horseRef = useRef<Mesh>(null);
-  const stopRefs = useRef<Mesh[]>([]);
+  const stopRefs = useRef<(Mesh | null)[]>([]);
 
 
   const handleKeyDown = (event: KeyboardEvent)=>{
@@ -63,6 +65,7 @@ function App() {
             <Trail />
             <StopsContainer stopRefs={stopRefs} stops={stops} visitStop={openPanel}
             />
+            <ProximityTrigger horseRef={horseRef} stopRefs={stopRefs} stops={stops} visitStop={openPanel} />
           </Suspense>
 
           <ambientLight intensity={2} />
