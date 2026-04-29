@@ -1,10 +1,10 @@
 import type { RefObject } from "react";
 import { Mesh } from "three";
 
-export type PanelID = "about" | "skills" | null;
+export type PanelID = "about" | "skills";
 
 export interface PanelContainerProps {
-    isActivePanel: PanelID | null;
+    isActivePanel: PanelID;
     onPanelClose: () => void;
 } 
 
@@ -36,5 +36,5 @@ export interface ProximityTriggerProps {
   horseRef: React.RefObject<Mesh | null>;
   stopRefs: React.RefObject<(Mesh | null)[]>;
   stops: StopData[];
-  visitStop: (panelID: PanelID) => void;
+  visitStop: (panelID: PanelID | null) => void;
 }

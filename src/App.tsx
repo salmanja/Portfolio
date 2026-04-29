@@ -44,7 +44,7 @@ function App() {
   }, [handleKeyDown]);
 
 
-  const openPanel = (panelID: PanelID) => {
+  const openPanel = (panelID: PanelID | null) => {
     setIsActivePanel(panelID);
   }
 
