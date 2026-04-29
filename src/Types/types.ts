@@ -1,7 +1,7 @@
 import type { RefObject } from "react";
 import { Mesh } from "three";
 
-export type PanelID = "about" | "skills";
+export type PanelID = "about" | "skills" | null;
 
 export interface PanelContainerProps {
     isActivePanel: PanelID | null;
