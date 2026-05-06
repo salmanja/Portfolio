@@ -6,6 +6,7 @@ export type PanelID = "about" | "skills";
 export interface PanelContainerProps {
     isActivePanel: PanelID;
     onPanelClose: () => void;
+    onPanelOpen: () => void;
 } 
 
 //what is a stop in App.tsx? this is its defintion. data only
