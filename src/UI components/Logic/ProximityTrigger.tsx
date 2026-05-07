@@ -1,4 +1,5 @@
-import type { ProximityTriggerProps, PanelID } from "../../Types/types";
+import type { ProximityTriggerProps } from "../../Types/types";
+import type { PanelType } from "../Drawer/PanelContainer";
 import { useFrame } from "@react-three/fiber";
 import {useEffect, useCallback, useRef} from "react";
 import { debounce } from "lodash";
@@ -11,10 +12,10 @@ export default function ProximityTrigger({
   visitStop,
 }: ProximityTriggerProps) {
 
-  const activeStopId = useRef<PanelID | null>(null);
+  const activeStopId = useRef<PanelType | null>(null);
 
   const debouncedEnter = useCallback(
-    debounce((id: PanelID) =>
+    debounce((id: PanelType) =>
     {
       console.log("triggered!!!!!")
       visitStop(id);

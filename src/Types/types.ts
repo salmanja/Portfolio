@@ -1,31 +1,30 @@
 import type { RefObject } from "react";
 import { Mesh } from "three";
-
-export type PanelID = "about" | "skills";
+import type {PanelType} from "../UI components/Drawer/PanelContainer";
 
 export interface PanelContainerProps {
-    isActivePanel: PanelID | null;
+    isActivePanel: PanelType | null;
     onPanelClose: () => void;
     onPanelOpen: () => void;
 } 
 
 //what is a stop in App.tsx? this is its defintion. data only
 export interface StopData {
-  id: PanelID;
+  id: PanelType;
   position: [number, number, number];
 }
 
 //this is for the container to render ALL stops, it needs the array and the behavior
 export interface StopsContainerProps {
-visitStop: (panelID: PanelID) => void;
+visitStop: (panelID: PanelType | null) => void;
 stops: StopData[];
 stopRefs: RefObject<(Mesh | null)[]>;
 }
 
 //this is what the stop component needs, data and behavior
 export interface StopProps {
-    visitStop: (panelID: PanelID) => void;
-    id: PanelID;
+    visitStop: (panelID: PanelType | null) => void;
+    id: PanelType;
     position: [number, number, number];
 }
 
@@ -37,5 +36,5 @@ export interface ProximityTriggerProps {
   horseRef: React.RefObject<Mesh | null>;
   stopRefs: React.RefObject<(Mesh | null)[]>;
   stops: StopData[];
-  visitStop: (panelID: PanelID | null) => void;
+  visitStop: (panelID: PanelType | null) => void;
 }

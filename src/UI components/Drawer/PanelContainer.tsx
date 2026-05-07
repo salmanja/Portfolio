@@ -9,7 +9,7 @@ const componentsMap ={
   skills : SkillsPanel
 } as const;
 
-type PanelType = keyof typeof componentsMap;
+export type PanelType = keyof typeof componentsMap;
 
 export default function PanelContainer({ isActivePanel, onPanelClose, onPanelOpen } :  PanelContainerProps ) {
 

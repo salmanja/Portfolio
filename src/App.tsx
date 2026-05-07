@@ -6,12 +6,13 @@ import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
 import Horse from "./ThreeD components/Horse/Horse";
-import type { PanelID, HorseProps, StopData } from "./Types/types";
+import type { HorseProps, StopData } from "./Types/types";
+import type { PanelType } from "./UI components/Drawer/PanelContainer";
 import ProximityTrigger from "./UI components/Logic/ProximityTrigger"
 
 
 function App() {
-  const [isActivePanel, setIsActivePanel] = useState<PanelID | null>(null);
+  const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
   const [horsePosition, setHorsePosition] = useState<HorseProps["horsePosition"]>({ x:0, y: 0, z: 0 });
 
   const stops: StopData[] = [{ id: 'about', position: [-2, 0, 0]}];
@@ -44,7 +45,7 @@ function App() {
   }, [handleKeyDown]);
 
 
-  const openPanel = (panelID: PanelID | null) => {
+  const openPanel = (panelID: PanelType | null) => {
     setIsActivePanel(panelID);
   }
 
