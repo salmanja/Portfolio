@@ -4,7 +4,7 @@ import { Mesh } from "three";
 export type PanelID = "about" | "skills";
 
 export interface PanelContainerProps {
-    isActivePanel: PanelID;
+    isActivePanel: PanelID | null;
     onPanelClose: () => void;
     onPanelOpen: () => void;
 } 

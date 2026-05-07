@@ -51,9 +51,10 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
 
-      {isActivePanel && <PanelContainer 
+    <PanelContainer 
       onPanelClose={() => setIsActivePanel(null)}
-      isActivePanel={isActivePanel} /> }
+      onPanelOpen= {() => setIsActivePanel(isActivePanel)}
+      isActivePanel={isActivePanel} /> 
 
 
       <Canvas>
