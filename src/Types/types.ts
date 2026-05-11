@@ -5,7 +5,6 @@ import type {PanelType} from "../UI components/Drawer/PanelContainer";
 export interface PanelContainerProps {
     isActivePanel: PanelType | null;
     onPanelClose: () => void;
-    onPanelOpen: () => void;
 } 
 
 //what is a stop in App.tsx? this is its defintion. data only
