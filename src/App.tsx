@@ -54,7 +54,6 @@ function App() {
 
     <PanelContainer 
       onPanelClose={() => setIsActivePanel(null)}
-      onPanelOpen= {() => setIsActivePanel(isActivePanel)}
       isActivePanel={isActivePanel} /> 
 
 
