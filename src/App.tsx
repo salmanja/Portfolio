@@ -1,61 +1,57 @@
-import { Canvas} from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
-import {Mesh} from "three";
+import { Mesh } from "three";
 import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
 import Horse from "./ThreeD components/Horse/Horse";
 import type { HorseProps, StopData } from "./Types/types";
 import type { PanelType } from "./UI components/Drawer/PanelContainer";
-import ProximityTrigger from "./UI components/Logic/ProximityTrigger"
-
+import ProximityTrigger from "./Logic/ProximityTrigger";
+import HorseController from "./Logic/HorseController";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
-  const [horsePosition, setHorsePosition] = useState<HorseProps["horsePosition"]>({ x:0, y: 0, z: 0 });
+  const [horsePosition, setHorsePosition] = useState<
+    HorseProps["horsePosition"]
+  >({ x: 0, y: 0, z: 0 });
 
-  const stops: StopData[] = [{ id: 'about', position: [-2, 0, 0]}];
+  const stops: StopData[] = [{ id: "about", position: [-2, 0, 0] }];
 
   const horseRef = useRef<Mesh>(null);
   const stopRefs = useRef<(Mesh | null)[]>([]);
 
-//this function will soon track the held keys
-  const handleKeyDown = (event: KeyboardEvent)=>{
-    if(event.key ==="ArrowUp"){
-      console.log(event.key);
-      setHorsePosition((prev)=>({...prev, z:prev.z - 1}));
-    } else if(event.key === "ArrowDown"){
-      console.log(event.key);
-      setHorsePosition((prev)=>({...prev, z:prev.z + 1}));
-    } else if(event.key === "ArrowLeft"){
-      console.log(event.key);
-      setHorsePosition((prev) => ({...prev, x:prev.x - 1}))
-    } else if(event.key === "ArrowRight"){
-      console.log(event.key);
-      setHorsePosition((prev)=>({...prev, x:prev.x + 1}));
+  const pressedKeys: Set<string> = new Set();
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+      pressedKeys.add(event.key);
     }
+  };
+  const handleKeyUp = (event:KeyboardEvent) =>{
+     pressedKeys.delete(event.key);
   }
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
     };
-  }, [handleKeyDown]);
-
+  }, [handleKeyDown, handleKeyUp]);
 
   const openPanel = (panelID: PanelType | null) => {
     setIsActivePanel(panelID);
-  }
+  };
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-
-    <PanelContainer 
-      onPanelClose={() => setIsActivePanel(null)}
-      isActivePanel={isActivePanel} /> 
-
+      <PanelContainer
+        onPanelClose={() => setIsActivePanel(null)}
+        isActivePanel={isActivePanel}
+      />
 
       <Canvas>
         <ScrollControls pages={4} damping={0.1}>
@@ -64,9 +60,18 @@ function App() {
           <Suspense fallback={null}>
             <Horse ref={horseRef} horsePosition={horsePosition} />
             <Trail />
-            <StopsContainer stopRefs={stopRefs} stops={stops} visitStop={openPanel}
+            <StopsContainer
+              stopRefs={stopRefs}
+              stops={stops}
+              visitStop={openPanel}
             />
-            <ProximityTrigger horseRef={horseRef} stopRefs={stopRefs} stops={stops} visitStop={openPanel} />
+            <ProximityTrigger
+              horseRef={horseRef}
+              stopRefs={stopRefs}
+              stops={stops}
+              visitStop={openPanel}
+            />
+            <HorseController setHorsePosition={setHorsePosition} keys={pressedKeys}/>
           </Suspense>
 
           <ambientLight intensity={2} />

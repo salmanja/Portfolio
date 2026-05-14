@@ -37,3 +37,7 @@ export interface ProximityTriggerProps {
   stops: StopData[];
   visitStop: (panelID: PanelType | null) => void;
 }
+export interface HorseControllerProps {
+  setHorsePosition: React.Dispatch<React.SetStateAction<{x:number, y:number, z:number}>>;
+  keys: Set<string>;
+}

@@ -1,9 +1,8 @@
-import type { ProximityTriggerProps } from "../../Types/types";
-import type { PanelType } from "../Drawer/PanelContainer";
+import type { ProximityTriggerProps } from "../Types/types";
+import type { PanelType } from "../UI components/Drawer/PanelContainer";
 import { useFrame } from "@react-three/fiber";
-import {useEffect, useCallback, useRef} from "react";
+import { useEffect, useCallback, useRef } from "react";
 import { debounce } from "lodash";
-
 
 export default function ProximityTrigger({
   horseRef,
@@ -11,32 +10,28 @@ export default function ProximityTrigger({
   stops,
   visitStop,
 }: ProximityTriggerProps) {
-
   const activeStopId = useRef<PanelType | null>(null);
 
   const debouncedEnter = useCallback(
-    debounce((id: PanelType) =>
-    {
-      console.log("triggered!!!!!")
+    debounce((id: PanelType) => {
       visitStop(id);
     }, 300),
-    [visitStop]
-  )
+    [visitStop],
+  );
 
   const debouncedExit = useCallback(
-    debounce(()=>{
-      console.log("exiting stop");
+    debounce(() => {
       visitStop(null);
-    },300),
-    [visitStop]
-  )
+    }, 300),
+    [visitStop],
+  );
 
-  useEffect(()=>{
-    return(()=>{
+  useEffect(() => {
+    return () => {
       debouncedEnter.cancel();
       debouncedExit.cancel();
-    })
-  })
+    };
+  });
 
   return useFrame(() => {
     const horsePosition = horseRef.current?.position;
@@ -44,33 +39,32 @@ export default function ProximityTrigger({
 
     let isNearNewStop = false;
     let isInBufferZone = false;
-    
+
     stopRefs.current.forEach((stopRef, i) => {
-        if (!stopRef || isNearNewStop) return;
+      if (!stopRef || isNearNewStop) return;
 
-        const stopId = stops[i].id;
-        const dist = horsePosition.distanceTo(stopRef.position);
+      const stopId = stops[i].id;
+      const dist = horsePosition.distanceTo(stopRef.position);
 
-        if (dist < 1.5){
-         isNearNewStop = true;
-         if(activeStopId.current !== stopId){
+      if (dist < 1.5) {
+        isNearNewStop = true;
+        if (activeStopId.current !== stopId) {
           activeStopId.current = stopId;
           debouncedEnter(stopId);
           debouncedExit.cancel();
-         }
-         isInBufferZone = true;
         }
+        isInBufferZone = true;
+      }
 
-        if(dist < 1.8 && activeStopId.current === stopId){
-          isInBufferZone = true;
-        }
-      });
-      if (!isNearNewStop && !isInBufferZone && activeStopId.current !== null){
+      if (dist < 1.8 && activeStopId.current === stopId) {
+        isInBufferZone = true;
+      }
+    });
+    if (!isNearNewStop && !isInBufferZone && activeStopId.current !== null) {
       activeStopId.current = null;
       debouncedExit();
       debouncedEnter.cancel();
     }
-   
   });
   return null;
 }
