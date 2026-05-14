@@ -20,7 +20,7 @@ function App() {
   const horseRef = useRef<Mesh>(null);
   const stopRefs = useRef<(Mesh | null)[]>([]);
 
-
+//this function will soon track the held keys
   const handleKeyDown = (event: KeyboardEvent)=>{
     if(event.key ==="ArrowUp"){
       console.log(event.key);
