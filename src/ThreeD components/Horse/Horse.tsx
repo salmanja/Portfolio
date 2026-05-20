@@ -3,11 +3,9 @@ import type { HorseProps } from "../../Types/types";
 import { forwardRef} from 'react';
 
 
-const Horse = forwardRef(({ horsePosition }: HorseProps, ref) => {
-//add a useFrame and lerp to create smooth movement of the horse based on the horsePosition prop
-
+const Horse = forwardRef(({ horsePosition, horseRotation }: HorseProps, ref) => {
   const { scene } = useGLTF('./public/models/horse.glb');
 
-  return <primitive ref={ref} object={scene} position={[horsePosition.x, horsePosition.y, horsePosition.z]} />;
+  return <primitive ref={ref} object={scene} position={[horsePosition.x, horsePosition.y, horsePosition.z]} rotation={[horseRotation.x, horseRotation.y, horseRotation.z]} />;
 })
 export default Horse;

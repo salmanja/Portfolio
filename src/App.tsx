@@ -16,6 +16,7 @@ function App() {
   const [horsePosition, setHorsePosition] = useState<
     HorseProps["horsePosition"]
   >({ x: 0, y: 0, z: 0 });
+  const [horseRotation, setHorseRotation] = useState<HorseProps["horseRotation"]>({x:0, y:0, z:0});
 
   const stops: StopData[] = [{ id: "about", position: [-2, 0, 0] }];
 
@@ -30,7 +31,7 @@ function App() {
     }
   };
   const handleKeyUp = (event:KeyboardEvent) =>{
-     pressedKeys.delete(event.key);
+    pressedKeys.delete(event.key);
   }
 
   useEffect(() => {
@@ -58,7 +59,7 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <Horse ref={horseRef} horsePosition={horsePosition} />
+            <Horse ref={horseRef} horsePosition={horsePosition} horseRotation={horseRotation} />
             <Trail />
             <StopsContainer
               stopRefs={stopRefs}
@@ -71,7 +72,7 @@ function App() {
               stops={stops}
               visitStop={openPanel}
             />
-            <HorseController setHorsePosition={setHorsePosition} keys={pressedKeys}/>
+            <HorseController setHorsePosition={setHorsePosition} keys={pressedKeys} setHorseRotation={setHorseRotation}/>
           </Suspense>
 
           <ambientLight intensity={2} />

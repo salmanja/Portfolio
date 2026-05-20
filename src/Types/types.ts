@@ -29,6 +29,7 @@ export interface StopProps {
 
 export interface HorseProps {
     horsePosition: {x:number, y:number, z:number};
+    horseRotation: {x:number, y:number, z:number};
 }
 
 export interface ProximityTriggerProps {
@@ -39,5 +40,6 @@ export interface ProximityTriggerProps {
 }
 export interface HorseControllerProps {
   setHorsePosition: React.Dispatch<React.SetStateAction<{x:number, y:number, z:number}>>;
+  setHorseRotation: React.Dispatch<React.SetStateAction<{x:number, y:number, z:number}>>;
   keys: Set<string>;
 }
