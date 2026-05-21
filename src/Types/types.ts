@@ -27,20 +27,14 @@ export interface StopProps {
     position: [number, number, number];
 }
 
-// export interface HorseProps {
-//     horsePosition: {x:number, y:number, z:number};
-//     horseRotation: {x:number, y:number, z:number};
-// }
-
 export interface ProximityTriggerProps {
   horseRef: React.RefObject<Mesh | null>;
   stopRefs: React.RefObject<(Mesh | null)[]>;
   stops: StopData[];
   visitStop: (panelID: PanelType | null) => void;
 }
+
 export interface HorseControllerProps {
-  // setHorsePosition: React.Dispatch<React.SetStateAction<{x:number, y:number, z:number}>>;
-  // setHorseRotation: React.Dispatch<React.SetStateAction<{x:number, y:number, z:number}>>;
   keys: Set<string>;
   horseRef: React.RefObject<Mesh | null>;
 }
