@@ -56,7 +56,7 @@ export default function ProximityTrigger({
         isInBufferZone = true;
       }
 
-      if (dist < 1.8 && activeStopId.current === stopId) {
+      if (dist < 1.6 && activeStopId.current === stopId) {
         isInBufferZone = true;
       }
     });
