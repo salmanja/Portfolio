@@ -15,7 +15,7 @@ function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
   const [horsePosition, setHorsePosition] = useState<
     HorseProps["horsePosition"]
-  >({ x: 0, y: 0, z: 0 });
+  >({ x: 0, y: -1, z: 0 });
   const [horseRotation, setHorseRotation] = useState<HorseProps["horseRotation"]>({x:0, y:0, z:0});
 
   const stops: StopData[] = [{ id: "about", position: [-2, 0, 0] }];
