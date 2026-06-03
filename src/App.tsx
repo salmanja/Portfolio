@@ -13,31 +13,47 @@ import HorseController from "./Logic/HorseController";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
+  const [isMoving, setIsMoving] = useState(false);
 
   const stops: StopData[] = [{ id: "about", position: [-2, 0, 0] }];
 
   const horseRef = useRef<Mesh>(null);
   const stopRefs = useRef<(Mesh | null)[]>([]);
 
-  const pressedKeys: Set<string> = new Set();
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
-      pressedKeys.add(event.key);
-    }
-  };
-  const handleKeyUp = (event:KeyboardEvent) =>{
-    pressedKeys.delete(event.key);
-  }
+  const pressedKeysRefs= useRef<Set<string>>(new Set());
 
   useEffect(() => {
+    let timeoutId: number;
+    const keyboardKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (keyboardKeys.includes(event.key)) {
+        pressedKeysRefs.current.add(event.key);
+        clearTimeout(timeoutId);
+        setIsMoving(true);
+      }
+    };
+    const handleKeyUp = (event: KeyboardEvent) => {
+      pressedKeysRefs.current.delete(event.key);
+      clearTimeout(timeoutId);
+
+      if (pressedKeysRefs.current.size === 0) {
+        timeoutId = setTimeout(() => {
+          setIsMoving(false);
+          clearTimeout(timeoutId);
+        }, 500);
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
+      clearTimeout(timeoutId);
     };
-  }, [handleKeyDown, handleKeyUp]);
+  }, []);
 
   const openPanel = (panelID: PanelType | null) => {
     setIsActivePanel(panelID);
@@ -55,7 +71,7 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <Horse ref={horseRef}  />
+            <Horse ref={horseRef} isMoving={isMoving} />
             <Trail />
             <StopsContainer
               stopRefs={stopRefs}
@@ -68,7 +84,7 @@ function App() {
               stops={stops}
               visitStop={openPanel}
             />
-            <HorseController  keys={pressedKeys} horseRef={horseRef} />
+            <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
           </Suspense>
 
           <ambientLight intensity={2} />

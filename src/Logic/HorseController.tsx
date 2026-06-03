@@ -10,21 +10,21 @@ export default function HorseController({
     const horseRotation = horseRef.current?.rotation;
     if (!horsePosition || !horseRotation) return;
 
-    const speed = 5 * delta;
+    const speed = 2 * delta;
 
-    if (keys.has("ArrowUp")) {
+    if (keys.current.has("ArrowUp")) {
       horsePosition.z -= speed;
       horseRotation.y = Math.PI;
     }
-    if (keys.has("ArrowDown")) {
+    if (keys.current.has("ArrowDown")) {
       horsePosition.z += speed;
       horseRotation.y = 2 * Math.PI;
     }
-    if (keys.has("ArrowLeft")) {
+    if (keys.current.has("ArrowLeft")) {
       horsePosition.x -= speed;
       horseRotation.y = (3 * Math.PI) / 2; 
     }
-    if (keys.has("ArrowRight")) {
+    if (keys.current.has("ArrowRight")) {
       horsePosition.x += speed;
       horseRotation.y = Math.PI / 2;
     }

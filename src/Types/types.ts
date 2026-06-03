@@ -35,6 +35,9 @@ export interface ProximityTriggerProps {
 }
 
 export interface HorseControllerProps {
-  keys: Set<string>;
+  keys: React.RefObject<Set<string>>;
   horseRef: React.RefObject<Mesh | null>;
+}
+export interface HorseProps {
+  isMoving: boolean;
 }
