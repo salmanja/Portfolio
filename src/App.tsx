@@ -87,7 +87,7 @@ function App() {
             <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
           </Suspense>
 
-          <ambientLight intensity={2} />
+          <ambientLight intensity={0.3} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
         </ScrollControls>
       </Canvas>
