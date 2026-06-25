@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import { Mesh } from "three";
-import Trail from "./ThreeD components/Navigation/Trail";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
 import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
 import Horse from "./ThreeD components/Horse/Horse";
@@ -10,6 +9,7 @@ import type { StopData } from "./Types/types";
 import type { PanelType } from "./UI components/Drawer/PanelContainer";
 import ProximityTrigger from "./Logic/ProximityTrigger";
 import HorseController from "./Logic/HorseController";
+import Landscape from "./ThreeD components/Enviroment/Landscape";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
@@ -66,13 +66,13 @@ function App() {
         isActivePanel={isActivePanel}
       />
 
-      <Canvas>
+      <Canvas camera={{ fov: 60, position:[0,1,7]}}>
         <ScrollControls pages={4} damping={0.1}>
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
+            <Landscape />
             <Horse ref={horseRef} isMoving={isMoving} />
-            <Trail />
             <StopsContainer
               stopRefs={stopRefs}
               stops={stops}
