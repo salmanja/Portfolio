@@ -9,7 +9,7 @@ import type { StopData } from "./Types/types";
 import type { PanelType } from "./UI components/Drawer/PanelContainer";
 import ProximityTrigger from "./Logic/ProximityTrigger";
 import HorseController from "./Logic/HorseController";
-import Landscape from "./ThreeD components/Enviroment/Landscape";
+import ForestModel from "./ThreeD components/Enviroment/Forest";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
@@ -71,7 +71,7 @@ function App() {
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <Landscape />
+            <ForestModel />
             <Horse ref={horseRef} isMoving={isMoving} />
             <StopsContainer
               stopRefs={stopRefs}
