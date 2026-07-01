@@ -38,6 +38,9 @@ export interface HorseControllerProps {
   keys: React.RefObject<Set<string>>;
   horseRef: React.RefObject<Mesh | null>;
 }
+export interface CameraControllerProps {
+  horseRef: React.RefObject<Mesh | null>;
+}
 export interface HorseProps {
   isMoving: boolean;
 }
