@@ -31,9 +31,9 @@ export default function ProximityTrigger({
       debouncedEnter.cancel();
       debouncedExit.cancel();
     };
-  });
+  },[debouncedEnter, debouncedExit]);
 
-  return useFrame(() => {
+  useFrame(() => {
     const horsePosition = horseRef.current?.position;
     if (!horsePosition) return;
 
@@ -65,6 +65,6 @@ export default function ProximityTrigger({
       debouncedExit();
       debouncedEnter.cancel();
     }
-  });
+  })
   return null;
 }

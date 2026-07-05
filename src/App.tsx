@@ -9,7 +9,8 @@ import type { StopData } from "./Types/types";
 import type { PanelType } from "./UI components/Drawer/PanelContainer";
 import ProximityTrigger from "./Logic/ProximityTrigger";
 import HorseController from "./Logic/HorseController";
-import Landscape from "./ThreeD components/Enviroment/Landscape";
+import CameraController from "./Logic/CameraController";
+import ForestModel from "./ThreeD components/Enviroment/Forest";
 
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
@@ -66,12 +67,12 @@ function App() {
         isActivePanel={isActivePanel}
       />
 
-      <Canvas camera={{ fov: 60, position:[0,1,7]}}>
+      <Canvas>
         <ScrollControls pages={4} damping={0.1}>
           <OrbitControls enabled={false} />
 
           <Suspense fallback={null}>
-            <Landscape />
+            <ForestModel />
             <Horse ref={horseRef} isMoving={isMoving} />
             <StopsContainer
               stopRefs={stopRefs}
@@ -85,6 +86,7 @@ function App() {
               visitStop={openPanel}
             />
             <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
+            <CameraController horseRef={horseRef}/>
           </Suspense>
 
           <ambientLight intensity={0.3} />
