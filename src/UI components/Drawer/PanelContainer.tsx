@@ -2,11 +2,15 @@ import {useState, useEffect} from "react";
 import { Drawer, Box } from "@mui/material";
 import SkillsPanel from "../Panels/Skills Panel/SkillsPanel";
 import AboutPanel from "../Panels/About Panel/AboutPanel";
+import ContactPanel from "../Panels/Contact Panel/ContactPanel";
+import ProjectsPanel from "../Panels/Projects Panel/ProjectsPanel";
 import type { PanelContainerProps } from "../../Types/types";
 
 const componentsMap ={
   about : AboutPanel,
-  skills : SkillsPanel
+  skills : SkillsPanel,
+  contact: ContactPanel,
+  projects: ProjectsPanel,
 } as const;
 
 export type PanelType = keyof typeof componentsMap;

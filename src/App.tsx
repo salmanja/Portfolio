@@ -16,12 +16,17 @@ function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
   const [isMoving, setIsMoving] = useState(false);
 
-  const stops: StopData[] = [{ id: "about", position: [-2, 0, 0] }];
+  const stops: StopData[] = [
+    { id: "about", position: [-1799.518, -2960.037, -1361.369] },
+    { id: "skills", position: [-3472.365, -2922.324, -4498.574] },
+    { id: "projects", position: [1784.051, -3209.467, -4377.05] },
+    { id: "contact", position: [4009.328, -2922.27, -2841.715] },
+  ];
 
   const horseRef = useRef<Mesh>(null);
   const stopRefs = useRef<(Mesh | null)[]>([]);
 
-  const pressedKeysRefs= useRef<Set<string>>(new Set());
+  const pressedKeysRefs = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     let timeoutId: number;
@@ -86,7 +91,7 @@ function App() {
               visitStop={openPanel}
             />
             <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
-            <CameraController horseRef={horseRef}/>
+            <CameraController horseRef={horseRef} />
           </Suspense>
 
           <ambientLight intensity={0.3} />
