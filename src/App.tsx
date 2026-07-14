@@ -1,9 +1,9 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
-import { Mesh } from "three";
+import { Group } from "three";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
-import StopsContainer from "./ThreeD components/Navigation/Stops/StopsContainer";
+import NavigationHUD from "./UI components/HUD/NavigationHUD";
 import Horse from "./ThreeD components/Horse/Horse";
 import type { StopData } from "./Types/types";
 import type { PanelType } from "./UI components/Drawer/PanelContainer";
@@ -12,20 +12,17 @@ import HorseController from "./Logic/HorseController";
 import CameraController from "./Logic/CameraController";
 import ForestModel from "./ThreeD components/Enviroment/Forest";
 
+const stops: StopData[] = [
+  { id: "about", x: -18, z: -8 },
+  { id: "skills", x: -8, z: -8 },
+  { id: "projects", x: 8, z: -8 },
+  { id: "contact", x: 18, z: -8 },
+];
+
 function App() {
   const [isActivePanel, setIsActivePanel] = useState<PanelType | null>(null);
   const [isMoving, setIsMoving] = useState(false);
-
-  const stops: StopData[] = [
-    { id: "about", position: [-1799.518, -2960.037, -1361.369] },
-    { id: "skills", position: [-3472.365, -2922.324, -4498.574] },
-    { id: "projects", position: [1784.051, -3209.467, -4377.05] },
-    { id: "contact", position: [4009.328, -2922.27, -2841.715] },
-  ];
-
-  const horseRef = useRef<Mesh>(null);
-  const stopRefs = useRef<(Mesh | null)[]>([]);
-
+  const horseRef = useRef<Group>(null);
   const pressedKeysRefs = useRef<Set<string>>(new Set());
 
   useEffect(() => {
@@ -61,12 +58,10 @@ function App() {
     };
   }, []);
 
-  const openPanel = (panelID: PanelType | null) => {
-    setIsActivePanel(panelID);
-  };
-
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
+      <NavigationHUD activePanel={isActivePanel} />
+
       <PanelContainer
         onPanelClose={() => setIsActivePanel(null)}
         isActivePanel={isActivePanel}
@@ -79,18 +74,12 @@ function App() {
           <Suspense fallback={null}>
             <ForestModel />
             <Horse ref={horseRef} isMoving={isMoving} />
-            <StopsContainer
-              stopRefs={stopRefs}
-              stops={stops}
-              visitStop={openPanel}
-            />
+            <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
             <ProximityTrigger
               horseRef={horseRef}
-              stopRefs={stopRefs}
               stops={stops}
-              visitStop={openPanel}
+              visitStop={setIsActivePanel}
             />
-            <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
             <CameraController horseRef={horseRef} />
           </Suspense>
 

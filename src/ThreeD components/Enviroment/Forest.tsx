@@ -6485,12 +6485,7 @@ export default function ForestModel(props: any) {
   const sharedMaterial = materials.PP_Standard_Material;
 
   return (
-    <group {...props} dispose={null} onClick={(e)=>{
-      e.stopPropagation();
-      console.log('clicked mesh name:', e.object.name);
-      console.log('full data:', e.object);
-      console.log('clicked mesh position:', e.object.position);
-    }}>
+    <group {...props} dispose={null}>
       <group scale={0.01} position={[0, 15, 0]}>
         {Object.entries(SCENE_LAYERS).map(([meshName, coordinateArray]) =>
           coordinateArray.map((item, index) => {

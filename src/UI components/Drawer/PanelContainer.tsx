@@ -35,6 +35,7 @@ return (
     transitionDuration={{ enter: 500, exit: 500, appear:500 }}
     keepMounted
     sx={{
+      zIndex: 1400,
       "& .MuiDrawer-paper": {
         width: 500,
         boxSizing: "border-box",
