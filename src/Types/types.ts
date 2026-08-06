@@ -1,4 +1,4 @@
-import { Group } from "three";
+import type { Group } from "three";
 import type {PanelType} from "../UI components/Drawer/PanelContainer";
 
 export interface PanelContainerProps {
