@@ -3,11 +3,11 @@ import type { PanelType } from "../UI components/Drawer/PanelContainer";
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { PANEL_LABELS } from "../UI components/HUD/NavigationHUD";
+import { panel_labels } from "../UI components/NavigationMap/NavigationAssist";
 
-const TRIGGER_RADIUS = 10;
-const EXIT_DELAY_MS = 300;
-const LABEL_Y = 2;
+const trigger_radius = 10;
+const exit_delay_ms = 300;
+const label_y = 2;
 
 export default function ProximityTrigger({
   horseRef,
@@ -33,7 +33,7 @@ export default function ProximityTrigger({
       }
     }
 
-    const inZone = nearestStop !== null && nearestDist < TRIGGER_RADIUS;
+    const inZone = nearestStop !== null && nearestDist < trigger_radius;
     const now = performance.now();
 
     if (inZone) {
@@ -49,7 +49,7 @@ export default function ProximityTrigger({
 
     if (exitAt.current === null) {
       exitAt.current = now;
-    } else if (now - exitAt.current >= EXIT_DELAY_MS) {
+    } else if (now - exitAt.current >= exit_delay_ms) {
       exitAt.current = null;
       activeStopId.current = null;
       visitStop(null);
@@ -61,10 +61,8 @@ export default function ProximityTrigger({
       {stops.map((stop) => (
         <group key={stop.id} position={[stop.x, -1, stop.z]}>
           <Html
-            position={[0, LABEL_Y, 0]}
+            position={[0, label_y, 0]}
             center
-            sprite={false}
-            transform={false}
             zIndexRange={[100, 0]}
             style={{ pointerEvents: "none" }}
           >
@@ -79,7 +77,7 @@ export default function ProximityTrigger({
                 textShadow: "0 2px 8px rgba(0, 0, 0, 0.85)",
               }}
             >
-              {PANEL_LABELS[stop.id]}
+              {panel_labels[stop.id]}
             </div>
           </Html>
         </group>

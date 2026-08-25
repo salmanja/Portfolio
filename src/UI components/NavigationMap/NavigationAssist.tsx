@@ -1,19 +1,19 @@
 import type { PanelType } from "../Drawer/PanelContainer";
 
-const STOP_ORDER: PanelType[] = ["about", "skills", "projects", "contact"];
+const stop_order: PanelType[] = ["about", "skills", "projects", "contact"];
 
-export const PANEL_LABELS: Record<PanelType, string> = {
+export const panel_labels: Record<PanelType, string> = {
   about: "About Me",
   skills: "Skills",
   projects: "Projects",
   contact: "Contact",
 };
 
-interface NavigationHUDProps {
+interface NavigationProps {
   activePanel: PanelType | null;
 }
 
-export default function NavigationHUD({ activePanel }: NavigationHUDProps) {
+export default function NavigationAssist({ activePanel }: NavigationProps) {
   return (
     <div
       style={{
@@ -28,7 +28,7 @@ export default function NavigationHUD({ activePanel }: NavigationHUDProps) {
       }}
     >
       <nav style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
-        {STOP_ORDER.map((id) => (
+        {stop_order.map((id) => (
           <span
             key={id}
             style={{
@@ -43,7 +43,7 @@ export default function NavigationHUD({ activePanel }: NavigationHUDProps) {
               color: activePanel === id ? "#111" : "#fff",
             }}
           >
-            {PANEL_LABELS[id]}
+            {panel_labels[id]}
           </span>
         ))}
       </nav>
