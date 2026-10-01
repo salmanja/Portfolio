@@ -1,4 +1,5 @@
 import type { PanelType } from "../Drawer/PanelContainer";
+import { Box, Typography, Breadcrumbs } from "@mui/material";
 
 const stop_order: PanelType[] = ["about", "skills", "projects", "contact"];
 
@@ -15,26 +16,26 @@ interface NavigationProps {
 
 export default function NavigationMap({ activePanel }: NavigationProps) {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         position: "fixed",
         top: 16,
         left: 16,
         zIndex: 1300,
         pointerEvents: "none",
         fontFamily: "system-ui, sans-serif",
-        color: "#fff",
+        color: "#111",
         textShadow: "0 1px 4px rgba(0,0,0,0.85)",
       }}
     >
-      <nav style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
+      <Breadcrumbs separator="" aria-label="navigation-menu" sx={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 2 }}>
         {stop_order.map((id) => (
-          <span
+          <Typography
+          variant="body1"
             key={id}
-            style={{
+            sx={{
               padding: "4px 10px",
               borderRadius: 999,
-              fontSize: 13,
               fontWeight: activePanel === id ? 700 : 500,
               background:
                 activePanel === id
@@ -44,12 +45,12 @@ export default function NavigationMap({ activePanel }: NavigationProps) {
             }}
           >
             {panel_labels[id]}
-          </span>
+          </Typography>
         ))}
-      </nav>
-      <p style={{ margin: 0, fontSize: 14 }}>
+      </Breadcrumbs>
+      <Typography variant="body2" sx={{ margin: 0 }}>
         Ride ↑ to the signs, then ← → between them
-      </p>
-    </div>
+      </Typography>
+    </Box>
   );
 }
