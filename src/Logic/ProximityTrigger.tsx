@@ -3,6 +3,7 @@ import type { PanelType } from "../UI components/Drawer/PanelContainer";
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { Box, Typography } from "@mui/material";
 import { panel_labels } from "../UI components/NavigationMap/NavigationMap";
 
 const trigger_radius = 10;
@@ -66,19 +67,19 @@ export default function ProximityTrigger({
             zIndexRange={[100, 0]}
             style={{ pointerEvents: "none" }}
           >
-            <div
-              style={{
-                fontFamily: "system-ui, sans-serif",
-                fontSize: 48,
-                fontWeight: 400,
-                color: "#fff",
-                textAlign: "center",
-                whiteSpace: "nowrap",
-                textShadow: "0 2px 8px rgba(0, 0, 0, 0.85)",
-              }}
-            >
-              {panel_labels[stop.id]}
-            </div>
+            <Box sx={{ textAlign: "center", whiteSpace: "nowrap" }}>
+              <Typography
+                sx={{
+                  fontFamily: "system-ui, sans-serif",
+                  fontSize: 48,
+                  fontWeight: 400,
+                  color: "#fff",
+                  textShadow: "0 2px 8px rgba(0, 0, 0, 0.85)",
+                }}
+              >
+                {panel_labels[stop.id]}
+              </Typography>
+            </Box>
           </Html>
         </group>
       ))}
