@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import type {SkillData}  from "./Types/types";
-
+import type { SkillData } from "./Types/types";
 
 export default function Skill({ source, alt, title }: SkillData) {
   return (
@@ -13,11 +12,12 @@ export default function Skill({ source, alt, title }: SkillData) {
         } as any
       }
     >
-      <img
+      <Box
+        component="img"
         src={source}
         alt={alt}
         title={title}
-        style={{ width: 100, height: 100, objectFit: "contain" }}
+        sx={{ width: 100, height: 100, objectFit: "contain" }}
       />
     </Box>
   );
