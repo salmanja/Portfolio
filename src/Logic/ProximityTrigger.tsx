@@ -3,7 +3,7 @@ import type { PanelType } from "../UI components/Drawer/PanelContainer";
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { panel_labels } from "../UI components/NavigationMap/NavigationAssist";
+import { panel_labels } from "../UI components/NavigationMap/NavigationMap";
 
 const trigger_radius = 10;
 const exit_delay_ms = 300;

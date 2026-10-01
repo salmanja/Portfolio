@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import { Group } from "three";
 import PanelContainer from "./UI components/Drawer/PanelContainer";
-import NavigationAssist from "./UI components/NavigationMap/NavigationAssist";
+import NavigationMap from "./UI components/NavigationMap/NavigationMap";
 import Horse from "./ThreeD components/Horse/Horse";
 import type { StopData } from "./Types/types";
 import type { PanelType } from "./UI components/Drawer/PanelContainer";
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <NavigationAssist activePanel={isActivePanel} />
+      <NavigationMap activePanel={isActivePanel} />
 
       <PanelContainer
         onPanelClose={() => setIsActivePanel(null)}

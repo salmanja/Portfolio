@@ -13,7 +13,7 @@ interface NavigationProps {
   activePanel: PanelType | null;
 }
 
-export default function NavigationAssist({ activePanel }: NavigationProps) {
+export default function NavigationMap({ activePanel }: NavigationProps) {
   return (
     <div
       style={{
