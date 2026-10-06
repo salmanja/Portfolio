@@ -1,4 +1,4 @@
-import {Typography, Box} from "@mui/material";
+import {Typography, Box, Divider} from "@mui/material";
 import Skill from "./Skill";
 import type {SkillData}  from "./Types/types";
 
@@ -35,7 +35,7 @@ const skillsData: SkillData[] = [
   },
   {
     source:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     alt: "Tailwind CSS",
     title: "Tailwind CSS",
   },
@@ -50,6 +50,30 @@ const skillsData: SkillData[] = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
     alt: "Node.js",
     title: "Node.js",
+  },
+  {
+    source:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    alt: "Express.js",
+    title: "Express.js",
+  },
+  {
+    source:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    alt: "TypeScript",
+    title: "TypeScript",
+  },
+  {
+    source:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original-wordmark.svg",
+    alt: "Three.js",
+    title: "Three.js",
+  },
+  {
+    source:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg",
+    alt: "Blender",
+    title: "Blender",
   },
 ];
 
@@ -69,9 +93,11 @@ const skillStyles = {
 export default function SkillsPanel() {
   return (
     <Box sx={{ p: 8, alignItems: "center", textAlign: "center" }}>
-      <Typography variant="h5" gutterBottom>
-        I have experience with these technologies:
+      <Typography variant="h6" gutterBottom sx={{marginBottom: 2}}>
+        My speciality is Javascript-based web development, from React frontends to Node.js and Express backends. 
       </Typography>
+
+      <Divider sx={{width: "100%" }} />
 
         <Box
         component="section"
