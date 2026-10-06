@@ -1,19 +1,46 @@
-import { Typography, Avatar, Stack, Box } from "@mui/material";
+import {
+  Typography,
+  Avatar,
+  Stack,
+  Box,
+  Divider,
+  ButtonGroup,
+  Button,
+} from "@mui/material";
 import AboutImage from "./A9829537-0357-49A9-B05C-67E5027B86A8.jpeg";
 
 export default function AboutPanel() {
   return (
-    <Stack spacing={2} padding={4} sx={{ alignItems:"center"}}>
-      <Typography variant="h4">About Me</Typography>
-      <Avatar
-        alt="Jamila Salman"
-        src={AboutImage}
-        sx={{ width: 150, height: 150 }}
-      />
+    <Stack spacing={2} padding={4} sx={{ alignItems: "center", width: "100%" }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
+        <Typography variant="h4">About Me</Typography>
+
+        <Box
+          sx={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 4,
+            marginTop: 2,
+          }}
+        >
+          <Avatar
+            alt="Jamila Salman"
+            src={AboutImage}
+            sx={{ width: 150, height: 150 }}
+          />
+          <Typography variant="overline">
+            Bridging my passion for both coding and horses!
+          </Typography>
+        </Box>
+      </Box>
+
+      <Divider sx={{ width: "100%" }} />
+
       <Box
         sx={{
           maxWidth: "md",
-          width: "100%",
           display: "flex",
           flexDirection: "column",
           gap: 4,
@@ -127,6 +154,18 @@ export default function AboutPanel() {
           </Typography>
         </Box>
       </Box>
+
+      <Divider sx={{ width: "100%" }} />
+
+      <ButtonGroup variant="outlined" size="medium" color="secondary" >
+        <Button>
+          Check out my resume!
+        </Button>
+        <Button>
+          View my projects!
+        </Button>
+      </ButtonGroup>
+
     </Stack>
   );
 }
