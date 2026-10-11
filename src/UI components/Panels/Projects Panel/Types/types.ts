@@ -3,4 +3,6 @@ export interface ProjectData {
   media: string;
   description: string;
   alt:string;
+  expand: boolean;
+  onToggle: ()=>void; 
 }

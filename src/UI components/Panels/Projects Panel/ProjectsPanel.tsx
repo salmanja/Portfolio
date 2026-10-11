@@ -1,7 +1,7 @@
 /// TASKS
 /// child component !!!!!DONE!!!!!
 /// array of objects and map, title/ media/ description !!!!!DONE!!!!
-/// toggle state
+/// toggle state !!!!DONE!!!!!!
 /// right aligned icon button !!!!!DONE!!!!!
 /// fill the media with video or images 
 
@@ -16,35 +16,51 @@ const projectsData: ProjectData[] = [
     alt: "Bluewater Imaging",
     media: "demo",
     description: "What i built/ what it solved/ how i solved it(what i used)",
+    expand: false,
+    onToggle: () => {},
   },
   {
     title: "AuraHealth",
     alt: "AuraHealth",
     media: "demo",
     description: "What i built/ what it solved/ how i solved it(what i used)",
+    expand: false,
+    onToggle: () => {},
   },
   {
     title: "Verifywise",
     alt: "Verifywise",
     media: "demo",
     description: "What i built/ what it solved/ how i solved it(what i used)",
+    expand: false,
+    onToggle: () => {},
   },
   {
     title: "Barn finds",
     alt: "Barn finds",
     media: "demo",
     description: "What i built/ what it solved/ how i solved it(what i used)",
+    expand: false,
+    onToggle: () => {},
   },
   {
     title: "NoteFolio",
     alt: "NoteFolio",
     media: "demo",
     description: "What i built/ what it solved/ how i solved it(what i used)",
+    expand: false,
+    onToggle: () => {},
   },
 ];
 
 export default function ProjectsPanel() {
-  const [expandProjectDetails, setExpandProjectDetails] = useState(false);
+  const [expandedProject, setExpandedProject] = useState<string | null>(null);
+
+    const handleToggle = (title:string) =>{
+        setExpandedProject((prevTitle) =>{
+        return prevTitle === title ? null : title; 
+      });
+    }
   return (
     <Box
       sx={{
@@ -57,7 +73,7 @@ export default function ProjectsPanel() {
     >
       {projectsData.map((project) => (
         <Box key={project.alt}>
-          <ProjectCard title={project.title} alt={project.alt} media={project.media} description={project.description} />
+          <ProjectCard expand={expandedProject === project.title} onToggle={()=> handleToggle(project.title)} title={project.title} alt={project.alt} media={project.media} description={project.description} />
         </Box>
       ))}
     </Box>
