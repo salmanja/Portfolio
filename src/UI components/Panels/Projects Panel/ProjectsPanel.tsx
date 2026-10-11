@@ -1,8 +1,9 @@
 /// TASKS
 /// child component
-/// array of objects and map
+/// array of objects and map, title/ media/ description !!!!!DONE!!!!
 /// toggle state
-/// right aligned icon button
+/// right aligned icon button !!!!!DONE!!!!!
+/// fill the media with video or images 
 
 import {
   Card,
@@ -18,6 +19,40 @@ import { useState } from "react";
 import { Collapse as CollapseProject } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import type { ProjectData } from "./Types/types";
+
+const projectsData: ProjectData[] = [
+  {
+    title: "Bluewater Imaging",
+    alt: "Bluewater Imaging",
+    media: "demo",
+    description: "What i built/ what it solved/ how i solved it(what i used)",
+  },
+  {
+    title: "AuraHealth",
+    alt: "AuraHealth",
+    media: "demo",
+    description: "What i built/ what it solved/ how i solved it(what i used)",
+  },
+  {
+    title: "Verifywise",
+    alt: "Verifywise",
+    media: "demo",
+    description: "What i built/ what it solved/ how i solved it(what i used)",
+  },
+  {
+    title: "Barn finds",
+    alt: "Barn finds",
+    media: "demo",
+    description: "What i built/ what it solved/ how i solved it(what i used)",
+  },
+  {
+    title: "NoteFolio",
+    alt: "NoteFolio",
+    media: "demo",
+    description: "What i built/ what it solved/ how i solved it(what i used)",
+  },
+];
 
 export default function ProjectsPanel() {
   const [expandProjectDetails, setExpandProjectDetails] = useState(false);
@@ -31,106 +66,29 @@ export default function ProjectsPanel() {
         p: 4,
       }}
     >
-      {/* MASTER VERSION */}
-      <Card sx={{ position: "relative" }}>
-        <CardHeader title="Bluewater Imaging" />
-        <CardActions>
-          <IconButton sx={{ position: "absolute", bottom: 2, right: 6 }}>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <CollapseProject>
-          <CardContent>
-            <CardMedia>Demo</CardMedia>
-            <Typography>
-              What i built/ what it solved/ how i solved it(what i used)
-            </Typography>
+      {projectsData.map((project) => (
+        <Box key={project.alt}>
+        <Card sx={{ position: "relative" }}>
+          <CardHeader title={project.title} />
+          <CardActions>
             <IconButton sx={{ position: "absolute", bottom: 2, right: 6 }}>
-              <ExpandLessIcon />
+              <ExpandMoreIcon />
             </IconButton>
-          </CardContent>
-        </CollapseProject>
-      </Card>
-
-      <Card>
-        <CardHeader title="AuraHealth" />
-        <CardActions>
-          <IconButton>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <CollapseProject>
-          <CardContent>
-            <CardMedia>Demo</CardMedia>
-            <Typography>
-              What i built/ what it solved/ how i solved it(what i used)
-            </Typography>
-            <IconButton>
-              <ExpandLessIcon />
-            </IconButton>
-          </CardContent>
-        </CollapseProject>
-      </Card>
-
-      <Card>
-        <CardHeader title="Verifywise" />
-        <CardActions>
-          <IconButton>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <CollapseProject>
-          <CardContent>
-            <CardMedia>Demo</CardMedia>
-            <Typography>
-              What i built/ what it solved/ how i solved it(what i used)
-            </Typography>
-            <IconButton>
-              <ExpandLessIcon />
-            </IconButton>
-          </CardContent>
-        </CollapseProject>
-      </Card>
-
-      <Card>
-        <CardHeader title="Barn finds" />
-        <CardActions>
-          <IconButton>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <CollapseProject>
-          <CardContent>
-            <CardMedia>Demo</CardMedia>
-            <Typography>
-              What i built/ what it solved/ how i solved it(what i used)
-            </Typography>
-            <IconButton>
-              <ExpandLessIcon />
-            </IconButton>
-          </CardContent>
-        </CollapseProject>
-      </Card>
-
-      <Card>
-        <CardHeader title="NoteFolio" />
-        <CardActions>
-          <IconButton>
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <CollapseProject>
-          <CardContent>
-            <CardMedia>Demo</CardMedia>
-            <Typography>
-              What i built/ what it solved/ how i solved it(what i used)
-            </Typography>
-            <IconButton>
-              <ExpandLessIcon />
-            </IconButton>
-          </CardContent>
-        </CollapseProject>
-      </Card>
+          </CardActions>
+          <CollapseProject>
+            <CardContent>
+              <CardMedia>{project.media}</CardMedia>
+              <Typography>
+                {project.description}
+              </Typography>
+              <IconButton sx={{ position: "absolute", bottom: 2, right: 6 }}>
+                <ExpandLessIcon />
+              </IconButton>
+            </CardContent>
+          </CollapseProject>
+        </Card>
+        </Box>
+      ))}
     </Box>
   );
 }
