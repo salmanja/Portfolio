@@ -1,25 +1,14 @@
 /// TASKS
-/// child component
+/// child component !!!!!DONE!!!!!
 /// array of objects and map, title/ media/ description !!!!!DONE!!!!
 /// toggle state
 /// right aligned icon button !!!!!DONE!!!!!
 /// fill the media with video or images 
 
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardActions,
-  CardMedia,
-  Typography,
-  IconButton,
-  Box,
-} from "@mui/material";
+import { Box } from "@mui/material";
 import { useState } from "react";
-import { Collapse as CollapseProject } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import type { ProjectData } from "./Types/types";
+import ProjectCard from "./ProjectCard";
 
 const projectsData: ProjectData[] = [
   {
@@ -68,25 +57,7 @@ export default function ProjectsPanel() {
     >
       {projectsData.map((project) => (
         <Box key={project.alt}>
-        <Card sx={{ position: "relative" }}>
-          <CardHeader title={project.title} />
-          <CardActions>
-            <IconButton sx={{ position: "absolute", bottom: 2, right: 6 }}>
-              <ExpandMoreIcon />
-            </IconButton>
-          </CardActions>
-          <CollapseProject>
-            <CardContent>
-              <CardMedia>{project.media}</CardMedia>
-              <Typography>
-                {project.description}
-              </Typography>
-              <IconButton sx={{ position: "absolute", bottom: 2, right: 6 }}>
-                <ExpandLessIcon />
-              </IconButton>
-            </CardContent>
-          </CollapseProject>
-        </Card>
+          <ProjectCard title={project.title} alt={project.alt} media={project.media} description={project.description} />
         </Box>
       ))}
     </Box>
