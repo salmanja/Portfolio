@@ -20,9 +20,8 @@ export default function ProjectCard({
   onToggle,
 }: ProjectData) {
   return (
-    <Card sx={{ position: "relative" }}>
+    <Card sx={{ position: "relative", width:"100%" }}>
       <CardHeader title={title} />
-
       {!expand && (
         <CardActions>
           <IconButton
@@ -35,8 +34,9 @@ export default function ProjectCard({
       )}
 
       <CollapseProject in={expand}>
-        <CardContent>
-          <CardMedia>{media}</CardMedia>
+        <CardContent sx={{ display: "flex", flexDirection: "column", gap:2, p:4}}>
+          <CardMedia component="img" image={media} sx={{ height: 'auto', width: "100%" }}></CardMedia>
+          <Typography variant="overline" sx={{color:"primary.main"}}>The challenge and my approach</Typography>
           <Typography>{description}</Typography>
           <IconButton
             onClick={onToggle}
