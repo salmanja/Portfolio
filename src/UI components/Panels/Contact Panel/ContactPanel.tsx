@@ -2,6 +2,7 @@ import { Stack, Box, Typography, Divider, IconButton } from "@mui/material";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ContactForm from "./ContactForm";
 
 export default function ContactPanel() {
   return (
@@ -15,12 +16,14 @@ export default function ContactPanel() {
       <Typography variant="h4">Get in touch!</Typography>
       <Divider sx={{ width: "100%" }} />
 
-      <Box>{/* Form  */}</Box>
+      <Box sx={{p:4}}>
+        <ContactForm/>
+      </Box>
 
-      <Typography variant="h5">Or find me on</Typography>
+      <Typography variant="h4">Or find me on</Typography>
       <Divider sx={{ width: "100%" }} />
 
-      <Box>
+      <Box sx={{p:4}}>
         <IconButton href="mailto:jamilah.salman@outlook.com" target="_blank" rel="noopener noreferrer">
           <ContactMailIcon color="success" fontSize="large" />
         </IconButton>
