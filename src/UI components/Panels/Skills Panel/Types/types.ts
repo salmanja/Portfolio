@@ -3,3 +3,7 @@ export interface SkillData{
     alt:string;
     title:string;
 }
+export interface SkillCategories {
+    title:string;
+    skills: SkillData[];
+}
