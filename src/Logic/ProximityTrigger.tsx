@@ -5,6 +5,7 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import { panel_labels } from "../UI components/NavigationMap/NavigationMap";
+import { theme } from '../theme/theme';
 
 const trigger_radius = 10;
 const exit_delay_ms = 300;
@@ -67,13 +68,13 @@ export default function ProximityTrigger({
             zIndexRange={[100, 0]}
             style={{ pointerEvents: "none" }}
           >
-            <Box sx={{ textAlign: "center", whiteSpace: "nowrap" }}>
+            <Box sx={{ textAlign: "center", whiteSpace: "nowrap", backgroundColor: theme.custom.world.stopBackground}}>
               <Typography
                 sx={{
-                  fontFamily: "system-ui, sans-serif",
+                  fontFamily: theme.custom.world.stopFont,
                   fontSize: 48,
                   fontWeight: 400,
-                  color: "#fff",
+                  color: theme.custom.world.stopText,
                   textShadow: "0 2px 8px rgba(0, 0, 0, 0.85)",
                 }}
               >
