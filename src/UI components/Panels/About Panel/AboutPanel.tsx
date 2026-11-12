@@ -10,12 +10,15 @@ import {
 import AboutImage from "./A9829537-0357-49A9-B05C-67E5027B86A8.jpeg";
 
 export default function AboutPanel() {
+
   return (
     <Stack spacing={2} padding={4} sx={{ alignItems: "center", width: "100%" }}>
       <Box
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <Typography variant="h4">About Me</Typography>
+        <Typography variant="h4" color="text.primary">
+          About Me
+        </Typography>
 
         <Box
           sx={{
@@ -48,16 +51,16 @@ export default function AboutPanel() {
       >
         <Box>
           <Typography
-            variant="overline"
+            variant="h6"
             component="h2"
             gutterBottom
-            sx={{ fontWeight: "bold", color: "primary.main" }}
+            sx={{ color: "text.secondary" }}
           >
             Intro
           </Typography>
           <Typography
             variant="body1"
-            color="text.secondary"
+            color="text.primary"
             sx={{ lineHeight: 1.7 }}
           >
             Hi, I'm Jamilah Salman—a front-end developer with over five years of
@@ -74,16 +77,16 @@ export default function AboutPanel() {
 
         <Box>
           <Typography
-            variant="overline"
+            variant="h6"
             component="h2"
             gutterBottom
-            sx={{ fontWeight: "bold", color: "primary.main" }}
+            sx={{ color: "text.secondary" }}
           >
             Expertise & Achievements
           </Typography>
           <Typography
             variant="body1"
-            color="text.secondary"
+            color="text.primary"
             sx={{ lineHeight: 1.7 }}
           >
             In 2021, I joined Tekno Visual as a web developer and, after
@@ -105,16 +108,16 @@ export default function AboutPanel() {
 
         <Box>
           <Typography
-            variant="overline"
+            variant="h6"
             component="h2"
             gutterBottom
-            sx={{ fontWeight: "bold", color: "primary.main" }}
+            sx={{ color: "text.secondary" }}
           >
             Passion & Values
           </Typography>
           <Typography
             variant="body1"
-            color="text.secondary"
+            color="text.primary"
             sx={{ lineHeight: 1.7 }}
           >
             I'm a lifelong learner. Whether it's testing a new JavaScript
@@ -132,16 +135,16 @@ export default function AboutPanel() {
 
         <Box>
           <Typography
-            variant="overline"
+            variant="h6"
             component="h2"
             gutterBottom
-            sx={{ fontWeight: "bold", color: "primary.main" }}
+            sx={{ color: "text.secondary" }}
           >
             Approach to Work
           </Typography>
           <Typography
             variant="body1"
-            color="text.secondary"
+            color="text.primary"
             sx={{ lineHeight: 1.7 }}
           >
             My process blends my background in marketing and project management
@@ -157,15 +160,10 @@ export default function AboutPanel() {
 
       <Divider sx={{ width: "100%" }} />
 
-      <ButtonGroup variant="outlined" size="medium" color="secondary" >
-        <Button>
-          Check out my resume!
-        </Button>
-        <Button>
-          View my projects!
-        </Button>
+      <ButtonGroup variant="outlined" size="medium" color="primary">
+        <Button>Check out my resume!</Button>
+        <Button>View my projects!</Button>
       </ButtonGroup>
-
     </Stack>
   );
 }

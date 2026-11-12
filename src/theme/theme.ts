@@ -40,12 +40,12 @@ export const theme = createTheme({
   palette: {
     //accents
     primary: {
-      main: "416B8B",
+      main: "#416B8B",
     },
     background: {
       default: "#FCFAF6",
       paper: "#FCFAF6",
-      section: "EAF1F5",
+      section: "#EAF1F5",
     },
     text: {
       primary: "#353E43",

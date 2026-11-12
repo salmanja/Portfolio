@@ -11,6 +11,8 @@ import ProximityTrigger from "./Logic/ProximityTrigger";
 import HorseController from "./Logic/HorseController";
 import CameraController from "./Logic/CameraController";
 import ForestModel from "./ThreeD components/Enviroment/Forest";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme/theme";
 
 const stops: StopData[] = [
   { id: "about", x: -18, z: -8 },
@@ -60,33 +62,35 @@ function App() {
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <NavigationMap activePanel={isActivePanel} />
+      <ThemeProvider theme={theme}>
+        <NavigationMap activePanel={isActivePanel} />
 
-      <PanelContainer
-        onPanelClose={() => setIsActivePanel(null)}
-        isActivePanel={isActivePanel}
-      />
+        <PanelContainer
+          onPanelClose={() => setIsActivePanel(null)}
+          isActivePanel={isActivePanel}
+        />
 
-      <Canvas>
-        <ScrollControls pages={4} damping={0.1}>
-          <OrbitControls enabled={false} />
+        <Canvas>
+          <ScrollControls pages={4} damping={0.1}>
+            <OrbitControls enabled={false} />
 
-          <Suspense fallback={null}>
-            <ForestModel />
-            <Horse ref={horseRef} isMoving={isMoving} />
-            <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
-            <ProximityTrigger
-              horseRef={horseRef}
-              stops={stops}
-              visitStop={setIsActivePanel}
-            />
-            <CameraController horseRef={horseRef} />
-          </Suspense>
+            <Suspense fallback={null}>
+              <ForestModel />
+              <Horse ref={horseRef} isMoving={isMoving} />
+              <HorseController keys={pressedKeysRefs} horseRef={horseRef} />
+              <ProximityTrigger
+                horseRef={horseRef}
+                stops={stops}
+                visitStop={setIsActivePanel}
+              />
+              <CameraController horseRef={horseRef} />
+            </Suspense>
 
-          <ambientLight intensity={0.3} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
-        </ScrollControls>
-      </Canvas>
+            <ambientLight intensity={0.3} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+          </ScrollControls>
+        </Canvas>
+      </ThemeProvider>
     </div>
   );
 }
