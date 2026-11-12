@@ -113,14 +113,22 @@ export default function SkillsPanel() {
         p: 4,
       }}
     >
-      <Typography variant="h4" gutterBottom >
+      <Typography variant="h4" color="text.primary" gutterBottom>
         My Tech Stack
       </Typography>
 
       <Divider sx={{ width: "100%" }} />
 
       {skillsCategories.map((skill) => (
-        <Box key={skill.title} sx={{ width: "100%" }}>
+        <Box
+          key={skill.title}
+          sx={{
+            width: "100%",
+            backgroundColor: "background.section",
+            padding: 1,
+            borderColor: "divider",
+          }}
+        >
           <SkillCard skills={skill.skills} title={skill.title} />
         </Box>
       ))}
