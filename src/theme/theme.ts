@@ -17,6 +17,9 @@ declare module "@mui/material/styles" {
         border: string;
         fontFamily: string;
       };
+      overlay: {
+        background:string;
+      }
     };
   }
   interface ThemeOptions {
@@ -32,6 +35,9 @@ declare module "@mui/material/styles" {
         border?: string;
         fontFamily?: string;
       };
+      overlay?: {
+        background?:string;
+      }
     };
   }
 }
@@ -80,6 +86,9 @@ export const theme = createTheme({
         border: "#B9A98C",
         fontFamily: "VT323, sans-serif",
     },
+    overlay: {
+      background: "rgba(20,30,35,0.45)",
+    }
   },
   spacing: 8,
 });

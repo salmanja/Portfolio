@@ -5,6 +5,7 @@ import AboutPanel from "../Panels/About Panel/AboutPanel";
 import ContactPanel from "../Panels/Contact Panel/ContactPanel";
 import ProjectsPanel from "../Panels/Projects Panel/ProjectsPanel";
 import type { PanelContainerProps } from "../../Types/types";
+import { useTheme } from "@mui/material/styles";
 
 const componentsMap ={
   about : AboutPanel,
@@ -27,6 +28,8 @@ export default function PanelContainer({ isActivePanel, onPanelClose} :  PanelCo
 
 const ActiveComponent = lastPanel ? componentsMap[lastPanel] : null;
 
+const theme = useTheme();
+
 return (
   <Drawer
     anchor="right"
@@ -37,19 +40,21 @@ return (
     sx={{
       zIndex: 1400,
       "& .MuiDrawer-paper": {
-        width: 500,
+        width: 550,
         boxSizing: "border-box",
         overflowY: "auto",
       },
     }}
     slotProps={{
       backdrop: {
-        invisible: true,
+        sx: {
+          backgroundColor: theme.custom.overlay.background,
+        }
       },
     }}
   >
 
-    <Box sx={{ width: 500, height: "100%" }}>
+    <Box sx={{ width: 550, height: "100%" }}>
       {ActiveComponent && <ActiveComponent />}
     </Box>
     
