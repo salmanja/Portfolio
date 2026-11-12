@@ -55,6 +55,7 @@ export default function AboutPanel() {
           display: "flex",
           flexDirection: "column",
           gap: 4,
+          p:4,
         }}
       >
         <Box>

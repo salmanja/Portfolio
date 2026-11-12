@@ -6,31 +6,62 @@ import ContactForm from "./ContactForm";
 
 export default function ContactPanel() {
   return (
-    <Stack sx={{
-      width: "100%",
-      display: "flex",
-      justifyContent:"center",
-      alignItems:"center",
-      gap:2,
-      p:4}}>
-      <Typography variant="h4">Get in touch!</Typography>
+    <Stack
+      sx={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 2,
+        p: 4,
+      }}
+    >
+      <Typography variant="h4" color="text.primary">
+        Get in touch!
+      </Typography>
       <Divider sx={{ width: "100%" }} />
 
-      <Box sx={{p:4}}>
-        <ContactForm/>
+      <Box
+        sx={{
+          backgroundColor: "background.section",
+          padding: 1,
+          borderColor: "divider",
+        }}
+      >
+        <ContactForm />
       </Box>
 
-      <Typography variant="h4">Or find me on</Typography>
+      <Typography variant="h6" color="text.primary">
+        Or find me on
+      </Typography>
       <Divider sx={{ width: "100%" }} />
 
-      <Box sx={{p:4}}>
-        <IconButton href="mailto:jamilah.salman@outlook.com" target="_blank" rel="noopener noreferrer">
+      <Box
+        sx={{
+          backgroundColor: "background.section",
+          padding: 1,
+          borderColor: "divider",
+        }}
+      >
+        <IconButton
+          href="mailto:jamilah.salman@outlook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ContactMailIcon color="success" fontSize="large" />
         </IconButton>
-        <IconButton href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <IconButton
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GitHubIcon color="secondary" fontSize="large" />
         </IconButton>
-        <IconButton href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+        <IconButton
+          href="https://linkedin.com/in/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <LinkedInIcon color="primary" fontSize="large" />
         </IconButton>
       </Box>
