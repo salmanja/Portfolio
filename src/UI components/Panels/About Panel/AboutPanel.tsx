@@ -12,7 +12,15 @@ import AboutImage from "./A9829537-0357-49A9-B05C-67E5027B86A8.jpeg";
 export default function AboutPanel() {
 
   return (
-    <Stack spacing={2} padding={4} sx={{ alignItems: "center", width: "100%" }}>
+    <Stack
+      spacing={2}
+      padding={4}
+      sx={{
+        alignItems: "center",
+        width: "100%",
+        backgGroundColor: "background.paper",
+      }}
+    >
       <Box
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
@@ -54,7 +62,12 @@ export default function AboutPanel() {
             variant="h6"
             component="h2"
             gutterBottom
-            sx={{ color: "text.secondary" }}
+            sx={{
+              color: "text.secondary",
+              backgroundColor: "background.section",
+              padding: 1,
+              borderColor: "divider",
+            }}
           >
             Intro
           </Typography>
@@ -80,7 +93,12 @@ export default function AboutPanel() {
             variant="h6"
             component="h2"
             gutterBottom
-            sx={{ color: "text.secondary" }}
+            sx={{
+              color: "text.secondary",
+              backgroundColor: "background.section",
+              padding: 1,
+              borderColor: "divider",
+            }}
           >
             Expertise & Achievements
           </Typography>
@@ -111,7 +129,12 @@ export default function AboutPanel() {
             variant="h6"
             component="h2"
             gutterBottom
-            sx={{ color: "text.secondary" }}
+            sx={{
+              color: "text.secondary",
+              backgroundColor: "background.section",
+              padding: 1,
+              borderColor: "divider",
+            }}
           >
             Passion & Values
           </Typography>
@@ -138,7 +161,12 @@ export default function AboutPanel() {
             variant="h6"
             component="h2"
             gutterBottom
-            sx={{ color: "text.secondary" }}
+            sx={{
+              color: "text.secondary",
+              backgroundColor: "background.section",
+              padding: 1,
+              borderColor: "divider",
+            }}
           >
             Approach to Work
           </Typography>
@@ -160,7 +188,16 @@ export default function AboutPanel() {
 
       <Divider sx={{ width: "100%" }} />
 
-      <ButtonGroup variant="outlined" size="medium" color="primary">
+      <ButtonGroup
+        variant="outlined"
+        size="medium"
+        sx={{
+          backgroundColor: "primary.main",
+          color: "text.primary",
+          border: "1px solid",
+          borderColor: "divider",
+        }}
+      >
         <Button>Check out my resume!</Button>
         <Button>View my projects!</Button>
       </ButtonGroup>
