@@ -28,10 +28,9 @@ export default function NavigationMap({ activePanel }: NavigationProps) {
         left: 16,
         zIndex: 1300,
         pointerEvents: "none",
-        fontFamily: theme.custom.navigation.fontFamily,
-        color: theme.custom.navigation.text,
         backgroundColor: theme.custom.navigation.background,
         borderColor: theme.custom.navigation.border,
+        padding: 2,
       }}
     >
       <Breadcrumbs
@@ -47,18 +46,22 @@ export default function NavigationMap({ activePanel }: NavigationProps) {
               padding: "4px 10px",
               borderRadius: 999,
               fontWeight: activePanel === id ? 700 : 500,
-              background:
+              backgroundColor:
                 activePanel === id
                   ? "rgba(255, 255, 255, 0.95)"
                   : "rgba(0, 0, 0, 0.45)",
-              color: activePanel === id ? "#111" : "#fff",
+              color: activePanel === id ? theme.custom.navigation.text : "#fff",
+              fontFamily: theme.custom.navigation.fontFamily,
             }}
           >
             {panel_labels[id]}
           </Typography>
         ))}
       </Breadcrumbs>
-      <Typography variant="body1" sx={{ margin: 0 }}>
+      <Typography
+        variant="body1"
+        sx={{ margin: 0, fontFamily: theme.custom.navigation.fontFamily }}
+      >
         Ride ↑ to the signs, then ← → between them
       </Typography>
     </Box>

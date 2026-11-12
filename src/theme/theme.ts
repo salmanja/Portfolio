@@ -60,7 +60,7 @@ export const theme = createTheme({
     divider: "#E3E0D9",
   },
   typography: {
-    fontFamily: "Space Grotesk, sans-serif",
+    fontFamily: "'Space Grotesk', sans-serif",
     h4: {
       fontSize: "2rem",
       fontWeight: 700,
@@ -78,13 +78,13 @@ export const theme = createTheme({
     world: {
         stopBackground: "#F3EBD9",
         stopText: "#353E43",
-        stopFont: "Press Start 2P, sans-serif",
+        stopFont: "'Press Start 2P', sans-serif",
     },
     navigation: {
         background: "#F3EBD9",
         text: "#353E43",
         border: "#B9A98C",
-        fontFamily: "VT323, sans-serif",
+        fontFamily: "'VT323', sans-serif",
     },
     overlay: {
       background: "rgba(20,30,35,0.45)",
