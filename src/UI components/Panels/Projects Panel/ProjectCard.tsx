@@ -20,13 +20,21 @@ export default function ProjectCard({
   onToggle,
 }: ProjectData) {
   return (
-    <Card sx={{ position: "relative", width:"100%" }}>
+    <Card sx={{ position: "relative", width: "100%", color: "text.primary" }}>
       <CardHeader title={title} />
       {!expand && (
         <CardActions>
           <IconButton
             onClick={onToggle}
-            sx={{ position: "absolute", bottom: 2, right: 6 }}
+            sx={{
+              position: "absolute",
+              bottom: 2,
+              right: 6,
+              backgroundColor: "primary.main",
+              color: "text.primary",
+              border: "1px solid",
+              borderColor: "divider",
+            }}
           >
             <ExpandMoreIcon />
           </IconButton>
@@ -34,13 +42,29 @@ export default function ProjectCard({
       )}
 
       <CollapseProject in={expand}>
-        <CardContent sx={{ display: "flex", flexDirection: "column", gap:2, p:4}}>
-          <CardMedia component="img" image={media} sx={{ height: 'auto', width: "100%" }}></CardMedia>
-          <Typography variant="overline" sx={{color:"primary.main"}}>The challenge and my approach</Typography>
-          <Typography>{description}</Typography>
+        <CardContent
+          sx={{ display: "flex", flexDirection: "column", gap: 2, p: 4 }}
+        >
+          <CardMedia
+            component="img"
+            image={media}
+            sx={{ height: "auto", width: "100%" }}
+          ></CardMedia>
+          <Typography variant="h6" sx={{ color: "text.secondary" }}>
+            The challenge and my approach
+          </Typography>
+          <Typography variant="body1">{description}</Typography>
           <IconButton
             onClick={onToggle}
-            sx={{ position: "absolute", bottom: 2, right: 6 }}
+            sx={{
+              position: "absolute",
+              bottom: 2,
+              right: 6,
+              backgroundColor: "primary.main",
+              color: "text.primary",
+              border: "1px solid",
+              borderColor: "divider",
+            }}
           >
             <ExpandLessIcon />
           </IconButton>

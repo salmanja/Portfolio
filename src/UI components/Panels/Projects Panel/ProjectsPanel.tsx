@@ -66,18 +66,27 @@ export default function ProjectsPanel() {
       sx={{
         width: "100%",
         display: "flex",
-        justifyContent:"center",
-        alignItems:"center",
+        justifyContent: "center",
+        alignItems: "center",
         flexDirection: "column",
         gap: 4,
         p: 4,
       }}
     >
-        <Typography variant="h4">My work</Typography>
-        <Divider sx={{ width: "100%" }} />
-      
+      <Typography variant="h4" color="text.primary">
+        My work
+      </Typography>
+      <Divider sx={{ width: "100%" }} />
+
       {projectsData.map((project) => (
-        <Box key={project.alt}>
+        <Box
+          key={project.alt}
+          sx={{
+            backgroundColor: "background.section",
+            padding: 1,
+            borderColor: "divider",
+          }}
+        >
           <ProjectCard
             expand={expandedProject === project.title}
             onToggle={() => handleToggle(project.title)}
