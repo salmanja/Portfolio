@@ -72,23 +72,39 @@ export const theme = createTheme({
     body1: {
       fontSize: "1rem",
       fontWeight: 400,
+    },
   },
-},
   custom: {
     world: {
-        stopBackground: "#F3EBD9",
-        stopText: "#353E43",
-        stopFont: "'Press Start 2P', sans-serif",
+      stopBackground: "#F3EBD9",
+      stopText: "#353E43",
+      stopFont: "'Press Start 2P', sans-serif",
     },
     navigation: {
-        background: "#F3EBD9",
-        text: "#353E43",
-        border: "#B9A98C",
-        fontFamily: "'VT323', sans-serif",
+      background: "#F3EBD9",
+      text: "#228B22",
+      border: "#B9A98C",
+      fontFamily: "'VT323', sans-serif",
     },
     overlay: {
       background: "rgba(20,30,35,0.45)",
-    }
+    },
   },
   spacing: 8,
+  shape: {
+    borderRadius: 12,
+  },
+  components: {
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          border: `1px solid ${theme.palette.divider}`,
+          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)",
+        }),
+      },
+    },
+  },
 });

@@ -29,14 +29,17 @@ export default function NavigationMap({ activePanel }: NavigationProps) {
         zIndex: 1300,
         pointerEvents: "none",
         backgroundColor: theme.custom.navigation.background,
+        border: 1,
+        borderRadius: 1,
+        boxShadow: 1,
         borderColor: theme.custom.navigation.border,
-        padding: 2,
+        padding: 1,
       }}
     >
       <Breadcrumbs
         separator=""
         aria-label="navigation-menu"
-        sx={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 2 }}
+        sx={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 2 }}
       >
         {stop_order.map((id) => (
           <Typography
