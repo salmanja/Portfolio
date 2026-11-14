@@ -3,7 +3,14 @@ import { Box, Card, CardHeader, CardContent } from "@mui/material";
 
 export default function SkillCard({ title, skills }: SkillCategories) {
   return (
-    <Card sx={{ position: "relative", width: "100%", color: "text.primary" }}>
+    <Card
+      sx={{
+        position: "relative",
+        width: "100%",
+        color: "text.primary",
+        backgroundColor: "background.section",
+      }}
+    >
       <CardHeader title={title} />
       <CardContent>
         {skills.map((icon) => (
