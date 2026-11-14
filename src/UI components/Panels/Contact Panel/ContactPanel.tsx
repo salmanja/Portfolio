@@ -24,7 +24,10 @@ export default function ContactPanel() {
       <Box
         sx={{
           backgroundColor: "background.section",
-          padding: 1,
+          padding: 4,
+          border:1,
+          borderRadius: 1,
+          boxShadow: 1,
           borderColor: "divider",
         }}
       >
@@ -38,7 +41,6 @@ export default function ContactPanel() {
 
       <Box
         sx={{
-          backgroundColor: "background.section",
           padding: 1,
           borderColor: "divider",
         }}

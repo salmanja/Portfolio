@@ -33,9 +33,14 @@ export default function ContactForm() {
       </Stack>
       <Button
         sx={{
-          backgroundColor: "primary.main",
-          color: "text.primary",
-          border: "1px solid",
+          backgroundColor: "text.primary",
+          color: "#fff",
+          "&:hover": {
+            bgcolor: "hover.primary",
+            color: "hover.secondary",
+          },
+          border: 1,
+          borderRadius: 1,
           borderColor: "divider",
         }}
       >
