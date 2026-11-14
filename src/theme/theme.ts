@@ -77,7 +77,7 @@ export const theme = createTheme({
   custom: {
     world: {
       stopBackground: "#F3EBD9",
-      stopText: "#353E43",
+      stopText: "#354341",
       stopFont: "'Press Start 2P', sans-serif",
     },
     navigation: {
