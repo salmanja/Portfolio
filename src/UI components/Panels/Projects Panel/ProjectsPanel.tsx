@@ -82,9 +82,11 @@ export default function ProjectsPanel() {
         <Box
           key={project.alt}
           sx={{
-            backgroundColor: "background.section",
+            width: "100%",
             padding: 1,
-            borderColor: "divider",
+            border: 1,
+            borderRadius: 1,
+            boxShadow: 1,
           }}
         >
           <ProjectCard

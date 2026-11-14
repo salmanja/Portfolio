@@ -20,7 +20,14 @@ export default function ProjectCard({
   onToggle,
 }: ProjectData) {
   return (
-    <Card sx={{ position: "relative", width: "100%", color: "text.primary" }}>
+    <Card
+      sx={{
+        position: "relative",
+        width: "100%",
+        color: "text.primary",
+        backgroundColor: "background.section",
+      }}
+    >
       <CardHeader title={title} />
       {!expand && (
         <CardActions>
@@ -31,9 +38,8 @@ export default function ProjectCard({
               bottom: 2,
               right: 6,
               backgroundColor: "primary.main",
-              color: "text.primary",
-              border: "1px solid",
-              borderColor: "divider",
+              color: "#fff",
+              border: 1,
             }}
           >
             <ExpandMoreIcon />
@@ -61,9 +67,8 @@ export default function ProjectCard({
               bottom: 2,
               right: 6,
               backgroundColor: "primary.main",
-              color: "text.primary",
-              border: "1px solid",
-              borderColor: "divider",
+              color: "#fff",
+              border: 1,
             }}
           >
             <ExpandLessIcon />
