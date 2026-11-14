@@ -4,6 +4,18 @@ declare module "@mui/material/styles" {
   interface TypeBackground {
     section: string;
   }
+  interface Palette {
+    hover: {
+      primary: string;
+      secondary: string;
+    }
+  }
+  interface PaletteOptions {
+    hover?: {
+      primary?: string; 
+      secondary?: string;
+    }
+  }
   interface Theme {
     custom: {
       world: {
@@ -58,6 +70,10 @@ export const theme = createTheme({
       secondary: "#68747A",
     },
     divider: "#E3E0D9",
+    hover: {
+      primary: "#263F52",
+      secondary: "#F8FAFC",
+    },
   },
   typography: {
     fontFamily: "'Space Grotesk', sans-serif",

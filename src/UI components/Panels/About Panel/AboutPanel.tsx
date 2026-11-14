@@ -10,7 +10,6 @@ import {
 import AboutImage from "./A9829537-0357-49A9-B05C-67E5027B86A8.jpeg";
 
 export default function AboutPanel() {
-
   return (
     <Stack
       spacing={2}
@@ -55,7 +54,7 @@ export default function AboutPanel() {
           display: "flex",
           flexDirection: "column",
           gap: 4,
-          p:4,
+          p: 4,
         }}
       >
         <Box>
@@ -189,18 +188,37 @@ export default function AboutPanel() {
 
       <Divider sx={{ width: "100%" }} />
 
-      <ButtonGroup
-        variant="outlined"
-        size="medium"
-        sx={{
-          backgroundColor: "primary.main",
-          color: "text.primary",
-          border: "1px solid",
-          borderColor: "divider",
-        }}
-      >
-        <Button>Check out my resume!</Button>
-        <Button>View my projects!</Button>
+      <ButtonGroup variant="outlined" size="medium">
+        <Button
+          sx={{
+            backgroundColor: "#fff",
+            color: "text.primary",
+            "&:hover": {
+              bgcolor: "hover.primary",
+              color: "hover.secondary",
+            },
+            border: 1,
+            borderRadius: 1,
+            borderColor: "divider",
+          }}
+        >
+          Check out my resume!
+        </Button>
+        <Button
+          sx={{
+            backgroundColor: "text.primary",
+            color: "#fff",
+            "&:hover": {
+              bgcolor: "hover.primary",
+              color: "hover.secondary",
+            },
+            border: 1,
+            borderRadius: 1,
+            borderColor: "divider",
+          }}
+        >
+          View my projects!
+        </Button>
       </ButtonGroup>
     </Stack>
   );
