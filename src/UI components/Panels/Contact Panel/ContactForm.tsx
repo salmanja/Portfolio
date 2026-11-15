@@ -1,4 +1,4 @@
-import { Box, Stack, TextField, Button } from "@mui/material";
+import { Stack, TextField, Button } from "@mui/material";
 
 export default function ContactForm() {
   return (
