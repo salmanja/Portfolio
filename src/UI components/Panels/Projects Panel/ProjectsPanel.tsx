@@ -83,7 +83,6 @@ export default function ProjectsPanel() {
           key={project.alt}
           sx={{
             width: "100%",
-            padding: 1,
             border: 1,
             borderRadius: 1,
             boxShadow: 1,

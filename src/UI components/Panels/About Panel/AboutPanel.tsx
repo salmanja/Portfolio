@@ -206,7 +206,7 @@ export default function AboutPanel() {
         </Button>
         <Button
           sx={{
-            backgroundColor: "text.primary",
+            backgroundColor: "secondary.main",
             color: "#fff",
             "&:hover": {
               bgcolor: "hover.primary",

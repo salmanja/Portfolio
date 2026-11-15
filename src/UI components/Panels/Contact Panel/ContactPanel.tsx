@@ -25,7 +25,7 @@ export default function ContactPanel() {
         sx={{
           backgroundColor: "background.section",
           padding: 4,
-          border:1,
+          border: 1,
           borderRadius: 1,
           boxShadow: 1,
           borderColor: "divider",

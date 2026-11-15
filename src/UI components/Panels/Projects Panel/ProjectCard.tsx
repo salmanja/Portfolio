@@ -24,6 +24,7 @@ export default function ProjectCard({
       sx={{
         position: "relative",
         width: "100%",
+        padding: 1,
         color: "text.primary",
         backgroundColor: "background.section",
       }}

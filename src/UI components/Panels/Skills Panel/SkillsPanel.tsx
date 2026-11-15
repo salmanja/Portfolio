@@ -124,7 +124,6 @@ export default function SkillsPanel() {
           key={skill.title}
           sx={{
             width: "100%",
-            padding: 1,
             borderColor: "divider",
             border: 1,
             borderRadius: 1,
