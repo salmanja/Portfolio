@@ -35,6 +35,7 @@ export default function ContactForm() {
           Message
         </TextField>
         <Button
+          size="large"
           sx={{
             backgroundColor: "secondary.main",
             color: "#fff",
