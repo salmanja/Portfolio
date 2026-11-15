@@ -2,8 +2,12 @@ import { Box, Stack, TextField, Button } from "@mui/material";
 
 export default function ContactForm() {
   return (
-    <Box component="form" autoComplete="off">
-      <Stack spacing={3} color="text.secondary">
+      <Stack
+        component="form"
+        spacing={3}
+        autoComplete="off"
+        color="text.secondary"
+      >
         <TextField
           label="Name"
           required
@@ -41,11 +45,11 @@ export default function ContactForm() {
             border: 1,
             borderRadius: 1,
             borderColor: "divider",
+            alignSelf: "flex-start",
           }}
         >
           Submit
         </Button>
       </Stack>
-    </Box>
   );
 }
