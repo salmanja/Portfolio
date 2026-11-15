@@ -64,9 +64,9 @@ export default function AboutPanel() {
             gutterBottom
             sx={{
               color: "text.secondary",
-              backgroundColor: "background.section",
               padding: 1,
               borderColor: "divider",
+              borderBottom: 1,
             }}
           >
             Intro
@@ -95,9 +95,9 @@ export default function AboutPanel() {
             gutterBottom
             sx={{
               color: "text.secondary",
-              backgroundColor: "background.section",
               padding: 1,
               borderColor: "divider",
+              borderBottom: 1,
             }}
           >
             Expertise & Achievements
@@ -131,9 +131,9 @@ export default function AboutPanel() {
             gutterBottom
             sx={{
               color: "text.secondary",
-              backgroundColor: "background.section",
               padding: 1,
               borderColor: "divider",
+              borderBottom: 1,
             }}
           >
             Passion & Values
@@ -163,9 +163,9 @@ export default function AboutPanel() {
             gutterBottom
             sx={{
               color: "text.secondary",
-              backgroundColor: "background.section",
               padding: 1,
               borderColor: "divider",
+              borderBottom: 1,
             }}
           >
             Approach to Work
