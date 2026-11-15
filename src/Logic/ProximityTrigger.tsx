@@ -68,7 +68,7 @@ export default function ProximityTrigger({
             zIndexRange={[100, 0]}
             style={{ pointerEvents: "none" }}
           >
-            <Box sx={{ textAlign: "center", whiteSpace: "nowrap", backgroundColor: theme.custom.world.stopBackground, padding:2}}>
+            <Box sx={{ textAlign: "center", whiteSpace: "nowrap", padding:2}}>
               <Typography
               variant="h6"
                 sx={{

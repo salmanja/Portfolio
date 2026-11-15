@@ -43,7 +43,7 @@ export default function NavigationMap({ activePanel }: NavigationProps) {
       >
         {stop_order.map((id) => (
           <Typography
-            variant="body1"
+            variant="h6"
             key={id}
             sx={{
               padding: "4px 10px",
