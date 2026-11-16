@@ -74,7 +74,7 @@ export default function ProximityTrigger({
           >
             <Box sx={{ textAlign: "center", whiteSpace: "nowrap", padding: 2 }}>
               <Typography
-                variant="h6"
+                variant="h4"
                 sx={{
                   fontFamily: theme.custom.world.stopFont,
                   color: theme.custom.world.stopText,
