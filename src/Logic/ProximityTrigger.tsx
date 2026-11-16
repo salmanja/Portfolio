@@ -62,15 +62,19 @@ export default function ProximityTrigger({
     <>
       {stops.map((stop) => (
         <group key={stop.id} position={[stop.x, -1, stop.z]}>
+          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -4,0]}>
+            <ringGeometry args={[2, 3, 8]} />
+            <meshStandardMaterial color="#80daeb" emissive="#80daeb" emissiveIntensity={1.2} transparent={true} opacity={0.6} />
+          </mesh>
           <Html
             position={[0, label_y, 0]}
             center
             zIndexRange={[100, 0]}
             style={{ pointerEvents: "none" }}
           >
-            <Box sx={{ textAlign: "center", whiteSpace: "nowrap", padding:2}}>
+            <Box sx={{ textAlign: "center", whiteSpace: "nowrap", padding: 2 }}>
               <Typography
-              variant="h6"
+                variant="h6"
                 sx={{
                   fontFamily: theme.custom.world.stopFont,
                   color: theme.custom.world.stopText,
