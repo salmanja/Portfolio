@@ -64,7 +64,7 @@ export default function ProximityTrigger({
         <group key={stop.id} position={[stop.x, -1, stop.z]}>
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -4,0]}>
             <ringGeometry args={[2, 3, 8]} />
-            <meshStandardMaterial color="#80daeb" emissive="#80daeb" emissiveIntensity={1.2} transparent={true} opacity={0.6} />
+            <meshStandardMaterial color="#80daeb" emissive="#80daeb" emissiveIntensity={1.2} transparent={true} opacity={0.8} />
           </mesh>
           <Html
             position={[0, label_y, 0]}
