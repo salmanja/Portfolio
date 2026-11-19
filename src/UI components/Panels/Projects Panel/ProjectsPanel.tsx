@@ -3,7 +3,7 @@
 /// array of objects and map, title/ media/ description !!!!!DONE!!!!
 /// toggle state !!!!DONE!!!!!!
 /// right aligned icon button !!!!!DONE!!!!!
-/// fill the media with video or images
+/// fill the media with video or images !!!!!DONE!!!!!
 
 import { Box, Typography, Divider } from "@mui/material";
 import { useState } from "react";
@@ -14,7 +14,7 @@ const projectsData: ProjectData[] = [
   {
     title: "Bluewater Imaging",
     alt: "Bluewater Imaging",
-    media: "https://placehold.co/600x400/000000/FFFFFF/png",
+    media: "/projects/demos/bluewater-imaging-demo.mp4",
     description: "What i built/ what it solved/ how i solved it(what i used)",
     expand: false,
     onToggle: () => {},
@@ -22,7 +22,7 @@ const projectsData: ProjectData[] = [
   {
     title: "AuraHealth",
     alt: "AuraHealth",
-    media: "https://placehold.co/600x400/000000/FFFFFF/png",
+    media: "/projects/demos/aurahealth-demo.mp4",
     description: "What i built/ what it solved/ how i solved it(what i used)",
     expand: false,
     onToggle: () => {},
@@ -30,7 +30,7 @@ const projectsData: ProjectData[] = [
   {
     title: "Verifywise",
     alt: "Verifywise",
-    media: "https://placehold.co/600x400/000000/FFFFFF/png",
+    media: "/projects/images/coming-soon.jpg",
     description: "What i built/ what it solved/ how i solved it(what i used)",
     expand: false,
     onToggle: () => {},
@@ -38,7 +38,7 @@ const projectsData: ProjectData[] = [
   {
     title: "Barn finds",
     alt: "Barn finds",
-    media: "https://placehold.co/600x400/000000/FFFFFF/png",
+    media: "/projects/images/coming-soon.jpg",
     description: "What i built/ what it solved/ how i solved it(what i used)",
     expand: false,
     onToggle: () => {},
@@ -46,7 +46,7 @@ const projectsData: ProjectData[] = [
   {
     title: "NoteFolio",
     alt: "NoteFolio",
-    media: "https://placehold.co/600x400/000000/FFFFFF/png",
+    media: "./projects/images/coming-soon.jpg",
     description: "What i built/ what it solved/ how i solved it(what i used)",
     expand: false,
     onToggle: () => {},

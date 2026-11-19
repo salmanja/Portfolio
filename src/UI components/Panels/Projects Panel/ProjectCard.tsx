@@ -19,6 +19,8 @@ export default function ProjectCard({
   expand,
   onToggle,
 }: ProjectData) {
+  const isVideo = media.endsWith(".mp4") || media.endsWith(".webm");
+
   return (
     <Card
       sx={{
@@ -50,9 +52,16 @@ export default function ProjectCard({
           sx={{ display: "flex", flexDirection: "column", gap: 2, p: 4 }}
         >
           <CardMedia
-            component="img"
-            image={media}
-            sx={{ height: "auto", width: "100%" }}
+            component={isVideo ? "video" : "img"}
+            src={media}
+            autoPlay={isVideo}
+            loop={isVideo}
+            muted={isVideo}
+            controls={isVideo}
+            sx={{ 
+              height: "auto", 
+              width: "100%" 
+            }}
           ></CardMedia>
           <Typography variant="h6" sx={{ color: "text.secondary" }}>
             The challenge and my approach
