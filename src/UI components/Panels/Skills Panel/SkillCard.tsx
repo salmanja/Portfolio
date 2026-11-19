@@ -1,4 +1,4 @@
-import type { SkillCategories } from "./Types/types";
+import type { SkillCategories } from "../Panel Types/panelTypes";
 import { Box, Card, CardHeader, CardContent } from "@mui/material";
 
 export default function SkillCard({ title, skills }: SkillCategories) {

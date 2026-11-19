@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import AboutImage from "./A9829537-0357-49A9-B05C-67E5027B86A8.jpeg";
-import type { AboutData } from "./Types/types";
+import type { AboutData } from "../Panel Types/panelTypes";
 
 const aboutContent: AboutData[] = [
   {

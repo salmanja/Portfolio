@@ -10,7 +10,7 @@ import {
 import { Collapse as CollapseProject } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import type { ProjectData } from "./Types/types";
+import type { ProjectData } from "../Panel Types/panelTypes";
 
 export default function ProjectCard({
   title,

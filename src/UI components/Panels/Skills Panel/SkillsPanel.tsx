@@ -1,6 +1,6 @@
 import { Typography, Box, Divider } from "@mui/material";
 import SkillCard from "./SkillCard";
-import type { SkillCategories } from "./Types/types";
+import type { SkillCategories } from "../Panel Types/panelTypes";
 
 const skillsCategories: SkillCategories[] = [
   {

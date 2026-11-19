@@ -7,7 +7,7 @@
 
 import { Box, Typography, Divider } from "@mui/material";
 import { useState } from "react";
-import type { ProjectData } from "./Types/types";
+import type { ProjectData } from "../Panel Types/panelTypes";
 import ProjectCard from "./ProjectCard";
 
 const projectsData: ProjectData[] = [
