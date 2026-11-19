@@ -31,13 +31,10 @@ export default function ProjectCard({
     >
       <CardHeader title={title} />
       {!expand && (
-        <CardActions>
+        <CardActions sx={{ justifyContent: "flex-end" }}>
           <IconButton
             onClick={onToggle}
             sx={{
-              position: "absolute",
-              bottom: 2,
-              right: 6,
               backgroundColor: "primary.main",
               color: "#fff",
               border: 1,
@@ -64,12 +61,10 @@ export default function ProjectCard({
           <IconButton
             onClick={onToggle}
             sx={{
-              position: "absolute",
-              bottom: 2,
-              right: 6,
               backgroundColor: "primary.main",
               color: "#fff",
               border: 1,
+              alignSelf:"flex-end"
             }}
           >
             <ExpandLessIcon />

@@ -125,9 +125,7 @@ export default function SkillsPanel() {
           sx={{
             width: "100%",
             borderColor: "divider",
-            border: 1,
             borderRadius: 1,
-            boxShadow: 1,
           }}
         >
           <SkillCard skills={skill.skills} title={skill.title} />

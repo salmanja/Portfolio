@@ -41,7 +41,7 @@ export default function AboutPanel() {
       sx={{
         alignItems: "center",
         width: "100%",
-        backgGroundColor: "background.paper",
+        backgroundColor: "background.paper",
       }}
     >
       <Box
