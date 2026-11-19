@@ -6,6 +6,7 @@ import {
   CardMedia,
   Typography,
   IconButton,
+  Chip,
 } from "@mui/material";
 import { Collapse as CollapseProject } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -16,6 +17,7 @@ export default function ProjectCard({
   title,
   media,
   description,
+  stack,
   expand,
   onToggle,
 }: ProjectData) {
@@ -32,6 +34,10 @@ export default function ProjectCard({
       }}
     >
       <CardHeader title={title} />
+      {stack.map((tech) => (
+        <Chip key={tech} label={tech} variant="outlined" />
+      ))}
+
       {!expand && (
         <CardActions sx={{ justifyContent: "flex-end" }}>
           <IconButton
@@ -58,9 +64,9 @@ export default function ProjectCard({
             loop={isVideo}
             muted={isVideo}
             controls={isVideo}
-            sx={{ 
-              height: "auto", 
-              width: "100%" 
+            sx={{
+              height: "auto",
+              width: "100%",
             }}
           ></CardMedia>
           <Typography variant="h6" sx={{ color: "text.secondary" }}>
@@ -73,7 +79,7 @@ export default function ProjectCard({
               backgroundColor: "primary.main",
               color: "primary.contrastText",
               border: 1,
-              alignSelf:"flex-end"
+              alignSelf: "flex-end",
             }}
           >
             <ExpandLessIcon />

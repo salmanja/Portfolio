@@ -7,6 +7,7 @@ export interface ProjectData {
   title: string;
   media: string;
   description: string;
+  stack: string[];
   alt: string;
   expand: boolean;
   onToggle: () => void;
