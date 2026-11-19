@@ -36,12 +36,12 @@ const aboutContent: AboutData[] = [
 export default function AboutPanel() {
   return (
     <Stack
-      spacing={2}
-      padding={4}
       sx={{
         alignItems: "center",
         width: "100%",
         backgroundColor: "background.paper",
+        gap: 2,
+        p: 4,
       }}
     >
       <Box
@@ -112,7 +112,7 @@ export default function AboutPanel() {
       <ButtonGroup variant="outlined" size="medium">
         <Button
           sx={{
-            backgroundColor: "#fff",
+            backgroundColor: "#background.paper",
             color: "text.primary",
             "&:hover": {
               bgcolor: "hover.primary",
@@ -128,7 +128,7 @@ export default function AboutPanel() {
         <Button
           sx={{
             backgroundColor: "secondary.main",
-            color: "#fff",
+            color: "secondary.contrastText",
             "&:hover": {
               bgcolor: "hover.primary",
               color: "hover.secondary",

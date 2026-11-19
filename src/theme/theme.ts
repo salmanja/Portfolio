@@ -59,9 +59,15 @@ export const theme = createTheme({
     //accents
     primary: {
       main: "#416B8B",
+      contrastText: "#FFFFFF",
     },
     secondary: {
       main: "#0e73c0",
+      contrastText: "#FFFFFF",
+    },
+    success: {
+      main:"#397D68",
+      contrastText: "#FFFFFF",
     },
     background: {
       default: "#FCFAF6",

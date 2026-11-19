@@ -23,6 +23,7 @@ export default function ContactPanel() {
 
       <Box
         sx={{
+          width:"100%",
           backgroundColor: "background.section",
           padding: 4,
           border: 1,

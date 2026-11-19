@@ -69,7 +69,7 @@ export default function ProjectsPanel() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        gap: 4,
+        gap: 2,
         p: 4,
       }}
     >

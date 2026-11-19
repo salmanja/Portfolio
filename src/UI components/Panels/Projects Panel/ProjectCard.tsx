@@ -36,7 +36,7 @@ export default function ProjectCard({
             onClick={onToggle}
             sx={{
               backgroundColor: "primary.main",
-              color: "#fff",
+              color: "primary.contrastText",
               border: 1,
             }}
           >
@@ -62,7 +62,7 @@ export default function ProjectCard({
             onClick={onToggle}
             sx={{
               backgroundColor: "primary.main",
-              color: "#fff",
+              color: "primary.contrastText",
               border: 1,
               alignSelf:"flex-end"
             }}

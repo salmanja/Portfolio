@@ -7,12 +7,13 @@ export default function ContactForm() {
         spacing={3}
         autoComplete="off"
         color="text.secondary"
+        sx={{width: "100%"}}
       >
         <TextField
           label="Name"
           required
           variant="standard"
-          sx={{ width: "25ch" }}
+          fullWidth
         >
           Name
         </TextField>
@@ -20,14 +21,14 @@ export default function ContactForm() {
           label="Email"
           required
           variant="standard"
-          sx={{ width: "25ch" }}
+          fullWidth
         >
           Email
         </TextField>
         <TextField
           label="Message"
           required
-          variant="filled"
+          variant="standard"
           rows={4}
           multiline
           fullWidth

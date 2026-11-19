@@ -109,11 +109,11 @@ export default function SkillsPanel() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        gap: 4,
+        gap: 2,
         p: 4,
       }}
     >
-      <Typography variant="h4" color="text.primary" gutterBottom>
+      <Typography variant="h4" color="text.primary">
         My Tech Stack
       </Typography>
 
