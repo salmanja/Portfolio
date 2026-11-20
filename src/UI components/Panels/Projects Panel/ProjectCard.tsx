@@ -64,6 +64,7 @@ export default function ProjectCard({
             loop={isVideo}
             muted={isVideo}
             controls={isVideo}
+            loading="lazy"
             sx={{
               height: "auto",
               width: "100%",
