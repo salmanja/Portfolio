@@ -69,10 +69,9 @@ export default function ProjectCard({
               width: "100%",
             }}
           ></CardMedia>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            The challenge and my approach
+          <Typography variant="body1" sx={{ whiteSpace: "pre-line" }}>
+            {description}
           </Typography>
-          <Typography variant="body1">{description}</Typography>
           <IconButton
             onClick={onToggle}
             sx={{
