@@ -69,7 +69,7 @@ export default function ProjectCard({
               width: "100%",
             }}
           ></CardMedia>
-          <Typography variant="body1" sx={{ whiteSpace: "pre-line" }}>
+          <Typography variant="body1" sx={{ whiteSpace: "pre-line", p: 2 }}>
             {description}
           </Typography>
           <IconButton

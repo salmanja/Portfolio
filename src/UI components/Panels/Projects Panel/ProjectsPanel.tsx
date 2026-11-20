@@ -25,7 +25,7 @@ const projectsData: ProjectData[] = [
   {
     title: "Verifywise",
     alt: "Verifywise",
-    media: "/projects/images/coming-soon.jpg",
+    media: "/projects/images/verifywise-demo.jpg",
     description: "VerifyWise is an AI governance platform designed to help organizations manage AI projects, assess risks, and organize compliance documentation. Its dashboard brings together tools for managing projects, assessments, vendors, risks, and supporting documentation.\n\nMy work primarily focused on the dashboard’s file upload and management experience, contributing to the interface that allows users to upload, organize, and manage documentation within the platform.",
     stack: ["React", "Typescript", "Javascript", "Python", "PostgreSQL"],
     expand: false,
