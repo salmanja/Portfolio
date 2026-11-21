@@ -72,19 +72,22 @@ export default function ProjectCard({
               }}
             />
           ) : (
-            <TransformWrapper>
-              <TransformComponent>
-                <CardMedia
-                  component="img"
-                  src={media}
-                  loading="lazy"
-                  sx={{
-                    height: "auto",
-                    width: "100%",
-                  }}
-                />
-              </TransformComponent>
-            </TransformWrapper>
+            <>
+              <TransformWrapper>
+                <TransformComponent>
+                  <CardMedia
+                    component="img"
+                    src={media}
+                    loading="lazy"
+                    sx={{
+                      height: "auto",
+                      width: "100%",
+                    }}
+                  />
+                </TransformComponent>
+              </TransformWrapper>
+              <Chip label=" *Pinch or scroll to zoom" size="small"/>
+            </>
           )}
 
           <Typography variant="body1" sx={{ whiteSpace: "pre-line", p: 2 }}>

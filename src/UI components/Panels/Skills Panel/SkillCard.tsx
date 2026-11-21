@@ -21,7 +21,7 @@ export default function SkillCard({ title, skills }: SkillCategories) {
               src={icon.source}
               alt={icon.alt}
               title={icon.title}
-              sx={{ width: 50, height: 50, objectFit: "contain", margin: 2 }}
+              sx={{ width: 70, height: 70, objectFit: "contain", margin: 2 }}
             />
           </Box>
         ))}
