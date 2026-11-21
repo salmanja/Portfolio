@@ -11,6 +11,7 @@ import {
 import { Collapse as CollapseProject } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import type { ProjectData } from "../Panel Types/panelTypes";
 
 export default function ProjectCard({
@@ -57,19 +58,35 @@ export default function ProjectCard({
         <CardContent
           sx={{ display: "flex", flexDirection: "column", gap: 2, p: 4 }}
         >
-          <CardMedia
-            component={isVideo ? "video" : "img"}
-            src={media}
-            autoPlay={isVideo}
-            loop={isVideo}
-            muted={isVideo}
-            controls={isVideo}
-            loading="lazy"
-            sx={{
-              height: "auto",
-              width: "100%",
-            }}
-          ></CardMedia>
+          {isVideo ? (
+            <CardMedia
+              component="video"
+              src={media}
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              controls={true}
+              sx={{
+                height: "auto",
+                width: "100%",
+              }}
+            />
+          ) : (
+            <TransformWrapper>
+              <TransformComponent>
+                <CardMedia
+                  component="img"
+                  src={media}
+                  loading="lazy"
+                  sx={{
+                    height: "auto",
+                    width: "100%",
+                  }}
+                />
+              </TransformComponent>
+            </TransformWrapper>
+          )}
+
           <Typography variant="body1" sx={{ whiteSpace: "pre-line", p: 2 }}>
             {description}
           </Typography>
