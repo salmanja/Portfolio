@@ -10,7 +10,7 @@ export default function HorseController({
     const horseRotation = horseRef.current?.rotation;
     if (!horsePosition || !horseRotation) return;
 
-    const speed = 2 * delta;
+    const speed = 3.5 * delta;
 
     if (keys.current.has("ArrowUp")) {
       horsePosition.z -= speed;
