@@ -54,14 +54,14 @@ export default function ContactPanel() {
           <ContactMailIcon color="success" fontSize="large" />
         </IconButton>
         <IconButton
-          href="https://github.com/yourusername"
+          href="https://github.com/salmanja"
           target="_blank"
           rel="noopener noreferrer"
         >
           <GitHubIcon color="secondary" fontSize="large" />
         </IconButton>
         <IconButton
-          href="https://linkedin.com/in/yourusername"
+          href="https://linkedin.com/in/jamilah-s"
           target="_blank"
           rel="noopener noreferrer"
         >
