@@ -70,7 +70,7 @@ function App() {
           isActivePanel={isActivePanel}
         />
 
-        <Canvas>
+        <Canvas dpr={[1,1.5]}>
           <ScrollControls pages={4} damping={0.1}>
             <OrbitControls enabled={false} />
 
