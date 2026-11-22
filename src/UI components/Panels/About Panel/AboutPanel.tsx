@@ -111,6 +111,9 @@ export default function AboutPanel() {
 
       <ButtonGroup variant="outlined" size="medium">
         <Button
+          rel="noopener noreferrer"
+          href="https://drive.google.com/file/d/1zXbkdE6RzVvB1yFFdykvULgRAcFppwan/view?usp=drivesdk"
+          target="_blank"
           sx={{
             backgroundColor: "#background.paper",
             color: "text.primary",
@@ -123,9 +126,12 @@ export default function AboutPanel() {
             borderColor: "divider",
           }}
         >
-          Check out my resume!
+          View My Resume
         </Button>
         <Button
+          rel="noopener noreferrer"
+          href="https://github.com/salmanja"
+          target="_blank"
           sx={{
             backgroundColor: "secondary.main",
             color: "secondary.contrastText",
@@ -138,7 +144,7 @@ export default function AboutPanel() {
             borderColor: "divider",
           }}
         >
-          View my projects!
+          Check Out My Github!
         </Button>
       </ButtonGroup>
     </Stack>
