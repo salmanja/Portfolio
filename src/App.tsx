@@ -13,6 +13,8 @@ import CameraController from "./Logic/CameraController";
 import ForestModel from "./ThreeD components/Enviroment/Forest";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const stops: StopData[] = [
   { id: "about", x: -18, z: -8 },
@@ -91,6 +93,8 @@ function App() {
           </ScrollControls>
         </Canvas>
       </ThemeProvider>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
