@@ -1,4 +1,5 @@
 import { Canvas } from "@react-three/fiber";
+import { Perf } from "r3f-perf";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { OrbitControls, ScrollControls } from "@react-three/drei";
 import { Group } from "three";
@@ -73,6 +74,7 @@ function App() {
         />
 
         <Canvas dpr={[1,1.5]}>
+          <Perf position="top-right"/>
           <ScrollControls pages={4} damping={0.1}>
             <OrbitControls enabled={false} />
 
